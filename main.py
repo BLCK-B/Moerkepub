@@ -28,12 +28,24 @@ def write_html(file_path, content):
         file.write(content)
 
 
+# def process_content(content):
+# primitive text
+#     soup = BeautifulSoup(content, 'html.parser')
+#     paragraphs = soup.find_all('p')
+#     # replace word
+#     for para in paragraphs:
+#         para.string = para.get_text().replace('a', 'A')
+#     return str(soup)
+
 def process_content(content):
+    # nodes modification
     soup = BeautifulSoup(content, 'html.parser')
-    paragraphs = soup.find_all('p')
-    # replace word
-    for para in paragraphs:
-        para.string = para.get_text().replace('a', 'A')
+    # Iterate through all text nodes and replace 'a' with 'A'
+    for element in soup.find_all(string=True):
+        if element.parent.name not in ['script', 'style']:  # Skip script and style tags
+            # Replace 'a' with 'A' while preserving the HTML structure
+            new_text = element.replace('a', 'A')
+            element.replace_with(new_text)
     return str(soup)
 
 
@@ -57,13 +69,13 @@ def process_book():
     recreate_epub()
 
 
-epub_path = r"sideTesting/comeback.epub"
+epub_path = r"sideTesting/wasteland.epub"
 output_path = r"sideTesting/output/exportBook.epub"
 temp_path = "sideTesting/extracted_epub"
 
 if os.path.exists(output_path):
     os.remove(output_path)
-if os.path.exists("sideTesting/extracted_epub"):
-    shutil.rmtree("sideTesting/extracted_epub")
+if os.path.exists(temp_path):
+    shutil.rmtree(temp_path)
 
 process_book()
