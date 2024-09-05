@@ -3,6 +3,8 @@ import os
 import shutil
 from bs4 import BeautifulSoup
 
+import translator
+
 
 def extract_epub():
     with zipfile.ZipFile(epub_path, 'r') as z:
@@ -29,23 +31,38 @@ def write_html(file_path, content):
 
 
 # def process_content(content):
-# primitive text
+#     # primitive text
 #     soup = BeautifulSoup(content, 'html.parser')
 #     paragraphs = soup.find_all('p')
 #     # replace word
 #     for para in paragraphs:
-#         para.string = para.get_text().replace('a', 'A')
+#         para.string = translator.translate(para.get_text())
+#         # para.string = para.get_text().replace('a', 'A')
 #     return str(soup)
 
 def process_content(content):
     # nodes modification
     soup = BeautifulSoup(content, 'html.parser')
-    # Iterate through all text nodes and replace 'a' with 'A'
-    for element in soup.find_all(string=True):
-        if element.parent.name not in ['script', 'style']:  # Skip script and style tags
-            # Replace 'a' with 'A' while preserving the HTML structure
-            new_text = element.replace('a', 'A')
-            element.replace_with(new_text)
+    # for element in soup.find_all(string=True):
+    #     if element.parent.name in ['span', 'p', 'h1', 'h2', 'h3', 'a']:
+    #         print(element)
+    #         # new_text = element.replace('a', 'A')
+    #         # element.replace_with(new_text)
+
+    # trying to optimize text
+    elements = soup.find_all(string=True)
+    textBody = []
+    for i in range(len(elements)):
+        element = elements[i]
+        # only text-related tags
+        if element.parent.name in ['span', 'p', 'h1', 'h2', 'h3', 'a']:
+            # assemble coherent textBody and keep track of elements
+            if not element.isspace():
+                textBody.append(element)
+            if sum(len(element) for element in textBody) >= 800 and textBody[-1].strip().endswith('.'):
+                print(' '.join(textBody))
+                print()
+                textBody = []
     return str(soup)
 
 
@@ -60,16 +77,14 @@ def recreate_epub():
 def process_book():
     extract_epub()
     html_files = get_html_files()
-
     for file_path in html_files:
         content = read_html(file_path)
         modified_content = process_content(content)
         write_html(file_path, modified_content)
-
     recreate_epub()
 
 
-epub_path = r"sideTesting/wasteland.epub"
+epub_path = r"sideTesting/diary.epub"
 output_path = r"sideTesting/output/exportBook.epub"
 temp_path = "sideTesting/extracted_epub"
 
