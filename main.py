@@ -2,6 +2,8 @@ import zipfile
 import os
 import shutil
 from bs4 import BeautifulSoup
+import time
+import re
 
 import translator
 
@@ -29,40 +31,94 @@ def write_html(file_path, content):
     with open(file_path, 'w', encoding='utf-8') as file:
         file.write(content)
 
+# define sentence endings . ? ! with ' '
+# assemble array of position = tag pos and value = sentences
+# translate coherent text
+# split by those endings and reinsert to tags
+
 
 # def process_content(content):
 #     # primitive text
 #     soup = BeautifulSoup(content, 'html.parser')
 #     paragraphs = soup.find_all('p')
 #     # replace word
-#     for para in paragraphs:
-#         para.string = translator.translate(para.get_text())
-#         # para.string = para.get_text().replace('a', 'A')
+#     start = time.time()
+#     bufferText = []
+#     for index in range(len(paragraphs)):
+#         print(index, " / ", len(paragraphs))
+#         bufferText.append(paragraphs[index].get_text())
+#         paragraphs[index].clear()
+#         if sum(len(element) for element in bufferText) >= 800 and bufferText[-1].strip().endswith('.') or index == len(paragraphs) - 1:
+#             paragraphs[index].string = translator.translate(' '.join(bufferText))
+#             bufferText = []
+#     print("time: ", time.time() - start)
 #     return str(soup)
 
-def process_content(content):
-    # nodes modification
-    soup = BeautifulSoup(content, 'html.parser')
-    # for element in soup.find_all(string=True):
-    #     if element.parent.name in ['span', 'p', 'h1', 'h2', 'h3', 'a']:
-    #         print(element)
-    #         # new_text = element.replace('a', 'A')
-    #         # element.replace_with(new_text)
 
-    # trying to optimize text
-    elements = soup.find_all(string=True)
-    textBody = []
-    for i in range(len(elements)):
-        element = elements[i]
-        # only text-related tags
-        if element.parent.name in ['span', 'p', 'h1', 'h2', 'h3', 'a']:
-            # assemble coherent textBody and keep track of elements
-            if not element.isspace():
-                textBody.append(element)
-            if sum(len(element) for element in textBody) >= 800 and textBody[-1].strip().endswith('.'):
-                print(' '.join(textBody))
-                print()
-                textBody = []
+def split_sentences(text):
+    return re.split(r'(?<=[.!?])\s+', text.strip())
+
+
+def process_content(content):
+    soup = BeautifulSoup(content, 'html.parser')
+    paragraphs = soup.find_all('p')
+    start = time.time()
+    bufferText = []
+    bufferPositions = []
+    bufferSentences = []
+    for index, para in enumerate(paragraphs):
+        print(index + 1, " / ", len(paragraphs))
+        para_text = para.get_text()
+        sentences = split_sentences(para_text)
+
+        bufferText.append(para_text)
+        bufferPositions.append((index, len(sentences)))
+        bufferSentences.extend(sentences)
+
+        if sum(len(text) for text in bufferText) >= 800 or index == len(paragraphs) - 1:
+            translated_text = translator.translate(' '.join(bufferSentences).replace('\n', ''))
+
+            translated_sentences = split_sentences(translated_text)
+            for pos, (para_index, sentence_count) in enumerate(bufferPositions):
+                sentences_in_para = translated_sentences[:sentence_count]
+                translated_para_text = ' '.join(sentences_in_para)
+                paragraphs[para_index].clear()
+                paragraphs[para_index].append(translated_para_text)
+                translated_sentences = translated_sentences[sentence_count:]
+            bufferText = []
+            bufferPositions = []
+            bufferSentences = []
+    print("Time elapsed: ", time.time() - start)
+    return str(soup)
+
+
+# def process_content(content):
+#     # nodes modification
+#     soup = BeautifulSoup(content, 'html.parser')
+#     # for element in soup.find_all(string=True):
+#     #     if element.parent.name in ['span', 'p', 'h1', 'h2', 'h3', 'a']:
+#     #         print(element)
+#     #         # new_text = element.replace('a', 'A')
+#     #         # element.replace_with(new_text)
+#
+#     # trying to optimize text
+#     elements = soup.find_all(string=True)
+#     textBody = []
+#     for i in range(len(elements)):
+#         element = elements[i]
+#         # only text-related tags
+#         if element.parent.name in ['span', 'p', 'h1', 'h2', 'h3', 'a']:
+#             # assemble coherent textBody and keep track of elements
+#             if not element.isspace():
+#                 textBody.append(element.strip() + " ☻")
+#             if sum(len(element) for element in textBody) >= 800 and textBody[-1].strip().endswith('.☻'):
+#                 print(' '.join(textBody))
+#                 translated = translator.translate(' '.join(textBody))
+#                 print(translated)
+#                 # print(' '.join(textBody))
+#                 # print()
+#                 textBody = []
+
     return str(soup)
 
 
