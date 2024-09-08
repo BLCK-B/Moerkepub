@@ -4,7 +4,6 @@ import shutil
 from bs4 import BeautifulSoup
 import time
 import re
-
 import translator
 
 
@@ -59,6 +58,19 @@ def split_sentences(text):
     return re.split(r'(?<=[.!?])\s+', text.strip())
 
 
+def split_under_length(longLine):
+    sentences = split_sentences(longLine)
+    temp = []
+    clustered = []
+    for index, sent in enumerate(sentences):
+        if sum(len(text) for text in temp) >= 200 or index == len(sentences) - 1:
+            clustered.append(temp)
+            temp = []
+        else:
+            temp.append(sent.replace('\n', ''))
+    return clustered
+
+
 def process_content(content):
     soup = BeautifulSoup(content, 'html.parser')
     paragraphs = soup.find_all('p')
@@ -75,8 +87,14 @@ def process_content(content):
         bufferPositions.append((index, len(sentences)))
         bufferSentences.extend(sentences)
 
-        if sum(len(text) for text in bufferText) >= 800 or index == len(paragraphs) - 1:
-            translated_text = translator.translate(' '.join(bufferSentences).replace('\n', ''))
+        if sum(len(text) for text in bufferText) >= 250 or index == len(paragraphs) - 1:
+            if len(bufferText) == 1 and len(bufferText[0]) > 250:
+                translated_chunks = []
+                for cluster in split_under_length(bufferText[0]):
+                    translated_chunks.append(translator.translate(cluster))
+                translated_text = ' '.join([item for sublist in translated_chunks for item in(sublist if isinstance(sublist, list) else [sublist])])
+            else:
+                translated_text = translator.translate(' '.join(bufferSentences).replace('\n', ''))
 
             translated_sentences = split_sentences(translated_text)
             for pos, (para_index, sentence_count) in enumerate(bufferPositions):
@@ -118,8 +136,7 @@ def process_content(content):
 #                 # print(' '.join(textBody))
 #                 # print()
 #                 textBody = []
-
-    return str(soup)
+    # return str(soup)
 
 
 def recreate_epub():
@@ -140,7 +157,7 @@ def process_book():
     recreate_epub()
 
 
-epub_path = r"sideTesting/diary.epub"
+epub_path = r"sideTesting/CurbingTraffic.epub"
 output_path = r"sideTesting/output/exportBook.epub"
 temp_path = "sideTesting/extracted_epub"
 
