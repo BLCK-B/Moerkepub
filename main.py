@@ -7,15 +7,13 @@ import time
 import re
 import nltk
 import token_counter
-import translator
+
+
+# import translator
 
 
 def split_sentences(text):
     return nltk.sent_tokenize(text)
-
-
-def prepare_batches(text_nodes, token_limit, batch_size):
-    return text_nodes
 
 
 # given text nodes
@@ -24,7 +22,6 @@ def prepare_batches(text_nodes, token_limit, batch_size):
 # print results
 # when all, reconstruct by sentence counts
 # return new tags
-# TODO: does leaving out empty tags break style? - before saving
 
 def process_contents(html_paths):
     for key, value in html_paths.items():
@@ -34,28 +31,43 @@ def process_contents(html_paths):
         for tag in text_tags:
             sentences_per_tag.append(len(split_sentences(str(tag))))
 
-        tokens = token_counter.count_tokens(text_tags[0])
-        next_tokens = token_counter.count_tokens(text_tags[1])
-        merged_text = text_tags[0].strip()
-        index = 0
-        while index < len(text_tags) - 1:
-            if next_tokens < 90:
-                while tokens + next_tokens < 90:
-                    tokens += next_tokens
-                    next_tokens = token_counter.count_tokens(text_tags[index + 1])
-                    merged_text += ' ' + text_tags[index + 1].strip()
-                    index += 1
-            else:
-                index += 1
-                next_tokens = token_counter.count_tokens(text_tags[index + 1])
-            print(merged_text, tokens)
-            print()
-            # translated_piece = translator.translate(merged_text)
-            tokens = 0
-            merged_text = ""
-        # print(translated_piece)
+        to_translate = prepare_translation_texts(text_tags, 90)
+        for ttt in to_translate:
+            print(ttt)
+            print("----------")
 
     return html_paths
+
+
+def get_sentence_list_from_tags(text_tags):
+    sentences = [split_sentences(tag) for tag in text_tags]
+    return [sentence for sublist in sentences for sentence in sublist]
+
+
+def prepare_translation_texts(text_tags, token_limit):
+    sentences = get_sentence_list_from_tags(text_tags)
+    prepared_texts = []
+    index = 0
+    merged = sentences[0]
+    tokens = token_counter.count_tokens(sentences[0])
+    while index < len(sentences) - 1:
+        next_tokens = token_counter.count_tokens(sentences[index + 1])
+        if (tokens + next_tokens) < token_limit:
+            tokens += next_tokens
+            merged += ' ' + sentences[index + 1]
+            index += 1
+        else:
+            prepared_texts.append(merged)
+            tokens = 0
+            merged = ""
+            if next_tokens >= token_limit:
+                index += 1
+                merged = sentences[index]
+
+    if len(merged) > 0:
+        prepared_texts.append(merged)
+    prepared_texts = [t.strip() for t in prepared_texts]
+    return prepared_texts
 
 
 # def process_contentOld(content):
