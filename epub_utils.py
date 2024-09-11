@@ -30,6 +30,7 @@ def get_raw_texts(html_file_path):
     tags = soup.find_all('p')
     texts = [tag.get_text() for tag in tags]
     texts = [text.replace('\n', ' ').strip() for text in texts]
+    texts = [text.strip() for text in texts]
     return texts
 
 
