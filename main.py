@@ -3,33 +3,23 @@ import shutil
 import nltk
 from bs4 import BeautifulSoup
 import epub_utils
-import translator
 import time
 
 
-# def process_contents(html_path):
-#     html_content = epub_utils.__read_html(html_path)
-#     soup = BeautifulSoup(html_content, 'html.parser')
-#     p_tags = soup.find_all('p')
-#
-#     for tag in p_tags:
-#         text = tag.get_text().replace('\n', '').strip()
-#         sentences = split_sentences(text)
-#         if len(sentences) == 0:
-#             continue
-#         elif len(sentences) > 1:
-#             tag.string = ' '.join(translator.batch_translate(sentences))
-#         else:
-#             tag.string = translator.translate(sentences)
-#
-#     return str(soup)
-
-
 def process_contents(html_path):
-    html_content = epub_utils.__read_html(html_path)
+    html_content = epub_utils.read_html(html_path)
     soup = BeautifulSoup(html_content, 'html.parser')
     p_tags = soup.find_all('p')
 
+    group, tag_sentence_count = preprocess(p_tags)
+    if len(p_tags) != len(tag_sentence_count):
+        raise Exception("Tag numbers dont match")
+    translated = translate(group, batch_size=8)
+    apply_translated(translated, p_tags, tag_sentence_count)
+    return str(soup)
+
+
+def preprocess(p_tags):
     print("preprocessing")
     group = []
     tag_sentence_count = {}
@@ -42,21 +32,24 @@ def process_contents(html_path):
                 group.append(sentence)
         elif len(sentences) == 1:
             group.append(sentences[0])
+    return group, tag_sentence_count
 
-    if len(p_tags) != len(tag_sentence_count):
-        raise Exception("Tag numbers dont match")
 
+def translate(group, batch_size):
+    import translator
     print("translating")
     translated = []
-    size = 8
-    for i in range(0, len(group), size):
-        chunk = group[i:i + size]
+    for i in range(0, len(group), batch_size):
+        chunk = group[i:i + batch_size]
         # for sentence in translator.batch_translate(chunk):
         #     translated.append(sentence)
         for sentence in chunk:
             translated.append(sentence)
-        print(min(len(group), i + size), " / ", len(group))
+        print(min(len(group), i + batch_size), " / ", len(group))
+    return translated
 
+
+def apply_translated(translated, p_tags, tag_sentence_count):
     print("postprocessing")
     begin = 0
     for index, tag in enumerate(p_tags):
@@ -66,8 +59,6 @@ def process_contents(html_path):
         if sentcount:
             tag.string = ' '.join(translated[begin:begin + sentcount])
             begin += sentcount
-
-    return str(soup)
 
 
 def split_sentences(text):
@@ -92,7 +83,7 @@ def process_book(epub_path, temp_path, output_path):
 
 def main():
     # epub_path = r"test/resources/wonderland.epub"
-    epub_path = r"sideTesting/CurbingTraffic.epub"
+    epub_path = r"sideTesting/diary.epub"
     output_path = r"sideTesting/output/exportBook.epub"
     temp_path = "sideTesting/extracted_epub"
     if os.path.exists(output_path):
@@ -100,10 +91,11 @@ def main():
     if os.path.exists(temp_path):
         shutil.rmtree(temp_path)
 
-
     start_time = time.time()
     process_book(epub_path, temp_path, output_path)
     elapsed_time = time.time() - start_time
-    print(f'Elapsed time: {elapsed_time} seconds')
+    print(f'Full processing time: {elapsed_time} seconds')
 
-main()
+
+if __name__ == '__main__':
+    main()

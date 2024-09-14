@@ -22,14 +22,14 @@ def test_epub_extracted():
 def test_list_html():
     utils.extract_epub(epub_path, temp_path)
 
-    html_files = utils.list_html_files(temp_path)
+    html_files = utils.__list_html_files(temp_path)
 
     assert len(html_files) > 0
 
 
 def test_read_html():
     utils.extract_epub(epub_path, temp_path)
-    html_files = utils.list_html_files(temp_path)
+    html_files = utils.__list_html_files(temp_path)
 
     contents = utils.read_html(html_files[0])
 

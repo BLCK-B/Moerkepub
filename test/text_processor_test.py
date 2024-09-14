@@ -3,6 +3,7 @@ import os
 import shutil
 import main
 from unittest.mock import patch
+from bs4 import BeautifulSoup
 
 text = [  # lengths: 34, 31, 31 | 23, 15, 37 | 34, 39 | 17
     "Rabbit-hole, dipped suddenly down. So suddenly that Alice had not? She found herself falling down.",
@@ -11,43 +12,43 @@ text = [  # lengths: 34, 31, 31 | 23, 15, 37 | 34, 39 | 17
     "Down, down, down."
 ]
 
+p_tags = [
+    BeautifulSoup("<p> “Well!” thought Alice, downstairs! How brave they’ll all think me at home. </p>"),
+    BeautifulSoup("<p><span> Down, down, down. </span></p>"),
+]
+
 epub_path = r"resources/wonderland.epub"
 temp_path = r"resources/extracted"
 
 
 def test_split_sentences():
     sentences = main.split_sentences(text[2])
+
     assert len(sentences) == 2
 
 
-def test_sentence_list_from_tags():
-    sentences = main.get_sentence_list_from_tags(text)
+def test_preprocess_splits_sentences():
+    group, tag_sentence_count = main.preprocess(p_tags)
 
-    assert len(sentences) == 9
-
-
-@patch('token_counter.count_tokens')
-def test_prepare_translation_texts(mock_count_tokens):
-    mock_count_tokens.side_effect = lambda text: len(text)
-
-    result = main.prepare_translation_texts(text, token_limit=100)
-
-    assert len(result) == 3
+    assert len(group) == 3
 
 
-@patch('token_counter.count_tokens')
-def test_prepare_translation_texts_exceed_limit(mock_count_tokens):
-    mock_count_tokens.side_effect = lambda text: len(text)
+def test_preprocess_counts_sentences_per_tag():
+    group, tag_sentence_count = main.preprocess(p_tags)
 
-    result = main.prepare_translation_texts(text, token_limit=10)
-
-    assert len(result) == 9
+    assert tag_sentence_count[0] == 2 and tag_sentence_count[1] == 1
 
 
-@patch('token_counter.count_tokens')
-def test_prepare_translation_texts_unlimited(mock_count_tokens):
-    mock_count_tokens.side_effect = lambda text: len(text)
+def test_preprocess_cleans_whitespaces():
+    group, tag_sentence_count = main.preprocess(BeautifulSoup("<p>    Down,\n down,\n down.\n    </p>"))
 
-    result = main.prepare_translation_texts(text, token_limit=10000)
+    assert group[0] == "Down, down, down."
 
-    assert len(result) == 1
+
+# @patch('token_counter.count_tokens')
+# def test_preprocess_returns_sentences(mock_count_tokens):
+#     mock_count_tokens.side_effect = lambda text: len(text)
+#
+#     result = main.prepare_translation_texts(text, token_limit=100)
+#
+#     assert len(result) == 3

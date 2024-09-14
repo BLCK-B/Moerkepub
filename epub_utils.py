@@ -10,7 +10,7 @@ def extract_epub(epub_path, temp_path):
         z.extractall(temp_path)
 
 
-def __read_html(file_path):
+def read_html(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
         return file.read()
 
@@ -25,7 +25,7 @@ def __list_html_files(temp_path):
 
 
 def get_raw_texts(html_file_path):
-    html = __read_html(html_file_path)
+    html = read_html(html_file_path)
     soup = BeautifulSoup(html, 'html.parser')
     tags = soup.find_all('p')
     texts = [tag.get_text() for tag in tags]
