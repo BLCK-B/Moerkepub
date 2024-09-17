@@ -1,9 +1,10 @@
 import pytest
 import os
 import shutil
-import main
+import text_processor
 from unittest.mock import patch
 from bs4 import BeautifulSoup
+import text_processor as processor
 
 text = []
 p_tags = []
@@ -40,25 +41,25 @@ temp_path = r"resources/extracted"
 
 
 def test_split_sentences():
-    sentences = main.split_sentences(text[2])
+    sentences = processor.split_sentences(text[2])
 
     assert len(sentences) == 2
 
 
 def test_preprocess_splits_sentences():
-    group, tag_sentence_count = main.preprocess(p_tags)
+    group, tag_sentence_count = processor.preprocess(p_tags)
 
     assert len(group) == 3
 
 
 def test_preprocess_counts_sentences_per_tag():
-    group, tag_sentence_count = main.preprocess(p_tags)
+    group, tag_sentence_count = processor.preprocess(p_tags)
 
     assert tag_sentence_count[0] == 2 and tag_sentence_count[1] == 1
 
 
 def test_preprocess_cleans_whitespaces():
-    group, tag_sentence_count = main.preprocess(BeautifulSoup("<p>    Down,\n down,\n down.\n    </p>"))
+    group, tag_sentence_count = processor.preprocess(BeautifulSoup("<p>    Down,\n down,\n down.\n    </p>"))
 
     assert group[0] == "Down, down, down."
 
@@ -66,21 +67,27 @@ def test_preprocess_cleans_whitespaces():
 def test_preprocess_sentences_end_with_dot():
     p_tags.insert(0, BeautifulSoup("<p> I lost a dot </p>"))
 
-    group, tag_sentence_count = main.preprocess(p_tags)
+    group, tag_sentence_count = processor.preprocess(p_tags)
 
     assert group[0] == "I lost a dot."
 
 
 def test_preprocess_sentences_exclamation_unchanged():
-    group, tag_sentence_count = main.preprocess(p_tags)
-    print(group[0])
+    group, tag_sentence_count = processor.preprocess(BeautifulSoup("<p> Rabbit\ndown. </p>"))
+
+    assert group[0] == "Rabbit down."
+
+
+def test_preprocess_sentences_breakline_space():
+    group, tag_sentence_count = processor.preprocess(p_tags)
+
     assert group[0].endswith('!')
 
 
 def test_apply_translated_populates_tags():
     tag_sentence_count = {0: 2, 1: 1}
 
-    main.apply_translated(translated, p_tags, tag_sentence_count)
+    processor.apply_translated(translated, p_tags, tag_sentence_count)
 
     assert len(p_tags) == 2
 
@@ -88,15 +95,16 @@ def test_apply_translated_populates_tags():
 def test_apply_translated_joins_sentences():
     tag_sentence_count = {0: 2, 1: 1}
 
-    new_tags = main.apply_translated(translated, p_tags, tag_sentence_count)
+    new_tags = processor.apply_translated(translated, p_tags, tag_sentence_count)
 
     assert new_tags[0].string == 'Nun, dachte Alice, nach unten! Wie mutig werden sie mich alle zu Hause finden.'
     assert new_tags[1].string == 'Runter, runter, runter.'
+
 
 # @patch('token_counter.count_tokens')
 # def test_preprocess_returns_sentences(mock_count_tokens):
 #     mock_count_tokens.side_effect = lambda text: len(text)
 #
-#     result = main.prepare_translation_texts(text, token_limit=100)
+#     result = processor.prepare_translation_texts(text, token_limit=100)
 #
 #     assert len(result) == 3
