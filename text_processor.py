@@ -19,6 +19,7 @@ def process_contents(html_path, bilingual):
     group, tag_sentence_count = preprocess(p_tags)
     if len(p_tags) != len(tag_sentence_count):
         raise Exception("Tag numbers dont match")
+
     # translated = translate(group, batch_size=4, name=html_path)
     translated = group
     new_tags = apply_translated(translated, p_tags, tag_sentence_count)
@@ -63,8 +64,8 @@ def translate(group, batch_size, name):
     for i in range(0, len(group), batch_size):
         chunk = group[i:i + batch_size]
 
-        # chunk_translated = translator.batch_translate(chunk)
-        chunk_translated = chunk
+        chunk_translated = translator.batch_translate(chunk)
+        # chunk_translated = chunk
 
         for num in range(min(batch_size, len(chunk_translated))):
             if len(chunk_translated[num]) < 5 * len(chunk[num]):
@@ -111,7 +112,7 @@ def book_init(epub_path, temp_path, output_path):
     epub_utils.extract_epub(epub_path, temp_path)
 
     contents = epub_utils.get_html_lengths(temp_path)
-    print("book contents (html, characters):")
+    print("\nBook contents (html, characters):")
     for key, value in contents.items():
         print(os.path.basename(key), "\t\t", value)
 
@@ -126,16 +127,17 @@ def main():
     # epub_path = r"tests/resources/wonderland.epub"
     epub_path = r"sideTesting/diary.epub"
     output_path = r"sideTesting/output/exportBook.epub"
-    temp_path = "sideTesting/extracted_epub"
+    temp_path = "sideTesting/extracted.epub"
     if os.path.exists(output_path):
         os.remove(output_path)
     if os.path.exists(temp_path):
         shutil.rmtree(temp_path)
 
     start_time = time.time()
-    process_book(epub_path, temp_path, output_path)
+    book_init(epub_path, temp_path, output_path)
+    process_book(temp_path, output_path)
     elapsed_time = time.time() - start_time
-    print(f'Full processing time: {elapsed_time} seconds')
+    print(f'\nDone! Full processing time: {elapsed_time} seconds')
 
 
 if __name__ == '__main__':
