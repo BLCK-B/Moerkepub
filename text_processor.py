@@ -65,7 +65,6 @@ def translate(group, batch_size, name):
         chunk = group[i:i + batch_size]
 
         chunk_translated = translator.batch_translate(chunk)
-        # chunk_translated = chunk
 
         for num in range(min(batch_size, len(chunk_translated))):
             if len(chunk_translated[num]) < 5 * len(chunk[num]):
