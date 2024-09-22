@@ -59,7 +59,7 @@ def test_preprocess_counts_sentences_per_tag():
 
 
 def test_preprocess_cleans_whitespaces():
-    group, tag_sentence_count = processor.preprocess(BeautifulSoup("<p>    Down,\n down,\n down.\n    </p>"))
+    group, tag_sentence_count = processor.preprocess(BeautifulSoup("<p>    Down,\ndown,\ndown.\n    </p>"))
 
     assert group[0] == "Down, down, down."
 
@@ -99,12 +99,3 @@ def test_apply_translated_joins_sentences():
 
     assert new_tags[0].string == 'Nun, dachte Alice, nach unten! Wie mutig werden sie mich alle zu Hause finden.'
     assert new_tags[1].string == 'Runter, runter, runter.'
-
-
-# @patch('token_counter.count_tokens')
-# def test_preprocess_returns_sentences(mock_count_tokens):
-#     mock_count_tokens.side_effect = lambda text: len(text)
-#
-#     result = processor.prepare_translation_texts(text, token_limit=100)
-#
-#     assert len(result) == 3

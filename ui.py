@@ -1,7 +1,7 @@
-import time
-import sys
-import text_processor as processor
 import os
+import time
+
+import text_processor as processor
 
 output_path = r"sideTesting/output/exportBook.epub"
 temp_path = r"sideTesting/extracted.epub"
