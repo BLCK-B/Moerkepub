@@ -1,8 +1,9 @@
 import zipfile
 import os
-import shutil
 from bs4 import BeautifulSoup
 from collections import OrderedDict
+
+import text_processor
 
 
 def extract_epub(epub_path, temp_path):
@@ -40,10 +41,14 @@ def get_html_lengths(temp_path):
     html_lengths = OrderedDict()
     for file in html_files:
         raw_texts = get_raw_texts(file)
-        length = len(''.join(raw_texts))
+        length = len(text_processor.split_sentences(''.join(raw_texts)))
         if length != 0:
             html_lengths[file] = length
     return html_lengths
+
+
+def get_html_paths(temp_path):
+    return __list_html_files(temp_path)
 
 
 def write_html(file_path, content):

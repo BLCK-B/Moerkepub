@@ -25,7 +25,7 @@ def main():
             confirm = input("\nConfirm translate y/n: ")
             if confirm.lower() == 'y':
                 start_time = time.time()
-                processor.process_book_files(temp_path, output_path)
+                print("missing here")
                 elapsed_time = time.time() - start_time
                 print(f'Full processing time: {round(elapsed_time)} seconds')
             else:
@@ -59,13 +59,13 @@ def main():
 
 
 def process_epub(input_file, bilingual):
-    processor.book_init(input_file, temp_path, output_path)
+    html_objects = processor.book_init(input_file, temp_path, output_path)
 
     confirm = input("\nConfirm translate y/n: ")
     os.system('cls')
     if confirm.lower() == 'y':
         start_time = time.time()
-        processor.process_book_files(temp_path, output_path, bilingual)
+        processor.process_book_files(html_objects, temp_path, output_path, bilingual)
         elapsed_time = time.time() - start_time
         input(f'\nDone! Full processing time: {round(elapsed_time)} seconds')
         os.system('cls')
