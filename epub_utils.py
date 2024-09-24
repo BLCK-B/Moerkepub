@@ -4,8 +4,6 @@ import shutil
 from bs4 import BeautifulSoup
 from collections import OrderedDict
 
-import text_processor
-
 
 def extract_epub(epub_path, temp_path):
     with zipfile.ZipFile(epub_path, 'r') as z:

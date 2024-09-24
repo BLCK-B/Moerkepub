@@ -17,9 +17,9 @@ def process_contents(html_path, bilingual):
     if len(p_tags) != len(tag_sentence_count):
         raise Exception("Tag numbers dont match")
 
-    # import translator
-    # translated = translator.translate(group, batch_size=4, name=html_path)
-    translated = group
+    import translator
+    translated = translator.translate(group, batch_size=4, name=html_path)
+    # translated = group
     new_tags = apply_translated(translated, p_tags, tag_sentence_count)
 
     for original_tag, new_tag in zip(p_tags, new_tags):
@@ -34,7 +34,6 @@ def process_contents(html_path, bilingual):
 
 
 def preprocess(p_tags):
-    print("preprocessing")
     group = []
     tag_sentence_count = {}
     for index, tag in enumerate(p_tags):
@@ -54,7 +53,6 @@ def preprocess(p_tags):
 
 
 def apply_translated(translated, p_tags, tag_sentence_count):
-    print("postprocessing")
     new_tags = copy.deepcopy(p_tags)
     begin = 0
     for index, tag in enumerate(new_tags):
@@ -69,7 +67,7 @@ def split_sentences(text):
     return nltk.sent_tokenize(text)
 
 
-def process_book(temp_path, output_path, bilingual=False):
+def process_book_files(temp_path, output_path, bilingual=False):
     for path in contents.keys():
         print("processing ", path)
         processed = process_contents(path, bilingual)

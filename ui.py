@@ -25,7 +25,7 @@ def main():
             confirm = input("\nConfirm translate y/n: ")
             if confirm.lower() == 'y':
                 start_time = time.time()
-                processor.process_book(temp_path, output_path)
+                processor.process_book_files(temp_path, output_path)
                 elapsed_time = time.time() - start_time
                 print(f'Full processing time: {round(elapsed_time)} seconds')
             else:
@@ -35,7 +35,7 @@ def main():
             print("settings - GPU, models")
 
         elif choice == '2' or choice == '3':
-            input_file = input("Drag and drop PDF | EPUB | TXT file.\n\n")
+            input_file = input("Drag and drop EPUB | TXT file.\n\n")
             input_file = input_file.replace('\"', '')
             _, extension = os.path.splitext(input_file)
             extension = extension.lower()
@@ -47,8 +47,6 @@ def main():
             match extension:
                 case '.epub':
                     process_epub(input_file, bilingual=(choice == '3'))
-                case '.pdf':
-                    print(f"Processing PDF file")
                 case '.txt':
                     print(f"Processing TXT file")
                 case _:
@@ -67,7 +65,7 @@ def process_epub(input_file, bilingual):
     os.system('cls')
     if confirm.lower() == 'y':
         start_time = time.time()
-        processor.process_book(temp_path, output_path, bilingual)
+        processor.process_book_files(temp_path, output_path, bilingual)
         elapsed_time = time.time() - start_time
         input(f'\nDone! Full processing time: {round(elapsed_time)} seconds')
         os.system('cls')
