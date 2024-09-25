@@ -47,19 +47,19 @@ def test_split_sentences():
 
 
 def test_preprocess_splits_sentences():
-    group, tag_sentence_count = processor.preprocess(p_tags)
+    group, tag_sentence_count = processor.preprocess_html(p_tags)
 
     assert len(group) == 3
 
 
 def test_preprocess_counts_sentences_per_tag():
-    group, tag_sentence_count = processor.preprocess(p_tags)
+    group, tag_sentence_count = processor.preprocess_html(p_tags)
 
     assert tag_sentence_count[0] == 2 and tag_sentence_count[1] == 1
 
 
 def test_preprocess_cleans_whitespaces():
-    group, tag_sentence_count = processor.preprocess(BeautifulSoup("<p>    Down,\ndown,\ndown.\n    </p>"))
+    group, tag_sentence_count = processor.preprocess_html(BeautifulSoup("<p>    Down,\ndown,\ndown.\n    </p>"))
 
     assert group[0] == "Down, down, down."
 
@@ -67,19 +67,19 @@ def test_preprocess_cleans_whitespaces():
 def test_preprocess_sentences_end_with_dot():
     p_tags.insert(0, BeautifulSoup("<p> I lost a dot </p>"))
 
-    group, tag_sentence_count = processor.preprocess(p_tags)
+    group, tag_sentence_count = processor.preprocess_html(p_tags)
 
     assert group[0] == "I lost a dot."
 
 
 def test_preprocess_sentences_exclamation_unchanged():
-    group, tag_sentence_count = processor.preprocess(BeautifulSoup("<p> Rabbit\ndown. </p>"))
+    group, tag_sentence_count = processor.preprocess_html(BeautifulSoup("<p> Rabbit\ndown. </p>"))
 
     assert group[0] == "Rabbit down."
 
 
 def test_preprocess_sentences_breakline_space():
-    group, tag_sentence_count = processor.preprocess(p_tags)
+    group, tag_sentence_count = processor.preprocess_html(p_tags)
 
     assert group[0].endswith('!')
 
