@@ -32,7 +32,25 @@ def main():
                 print("Translation canceled.")
 
         elif choice == '1':
-            print("settings - GPU, models")
+            while True:
+                os.system('cls')
+                print("0. Back")
+                print("1. NLLB GPU")
+                print("2. NLLB CPU")
+                print("3. small100 CPU")
+                print("4. small100 CPU")
+                choice = input("Select: ")
+                if choice == '0':
+                    os.system('cls')
+                    break
+                elif choice == '1':
+                    print("ok")
+                elif choice == '2':
+                    print("ok")
+                elif choice == '3':
+                    print("ok")
+                elif choice == '4':
+                    print("ok")
 
         elif choice == '2' or choice == '3':
             input_file = input("Drag and drop EPUB | TXT file.\n\n")
