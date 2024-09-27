@@ -3,10 +3,8 @@ import os
 import shutil
 from progress.bar import IncrementalBar
 import time
-
 import nltk
 from bs4 import BeautifulSoup
-
 import epub_utils
 
 
@@ -25,13 +23,12 @@ def apply_translated(translated, p_tags, tag_sentence_count):
     return new_tags
 
 
-def process_contents(html_object, bilingual):
+def process_contents(translator, html_object, bilingual):
     html_path = html_object.get('html_name')
     html_content = epub_utils.read_html(html_path)
     soup = BeautifulSoup(html_content, 'html.parser')
     p_tags = soup.find_all('p')
 
-    import translator
     translated = translator.translate(html_object.get('sentence_list'), batch_size=4, name=html_path)
     # translated = group
     new_tags = apply_translated(translated, p_tags, html_object.get('tag_sentence_count'))
@@ -47,14 +44,15 @@ def process_contents(html_object, bilingual):
     return str(soup)
 
 
-def process_book_files(html_objects, temp_path, output_path, bilingual=False):
+def process_book_files(translator, html_objects, temp_path, output_path, bilingual=False):
     total_sentences = sum(len(obj.get('sentence_list', [])) for obj in html_objects)
     start_time = time.time()
     processed_sentences = 0
     for obj in html_objects:
         print(f'\nElapsed: {round((time.time() - start_time) / 60)} min')
-        with IncrementalBar('\nTotal:', max=total_sentences, suffix='%(index)d / %(max)d', index=processed_sentences) as bar:
-            processed_soup = process_contents(obj, bilingual)
+        with IncrementalBar('\nTotal:', max=total_sentences, suffix='%(index)d / %(max)d',
+                            index=processed_sentences) as bar:
+            processed_soup = process_contents(translator, obj, bilingual)
             epub_utils.write_html(obj.get('html_name'), processed_soup)
             processed_sentences += len(obj.get('sentence_list'))
             bar.goto(processed_sentences)

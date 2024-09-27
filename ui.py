@@ -1,7 +1,7 @@
 import os
 import time
-
-import text_processor as processor
+from translations import translations
+import text_processor
 
 output_path = r"sideTesting/output/exportBook.epub"
 temp_path = r"sideTesting/extracted.epub"
@@ -20,7 +20,7 @@ def main():
         if choice == '0':
             epub_path = r"sideTesting/diary.epub"
 
-            processor.book_init(epub_path, temp_path, output_path)
+            text_processor.book_init(epub_path, temp_path, output_path)
 
             confirm = input("\nConfirm translate y/n: ")
             if confirm.lower() == 'y':
@@ -60,11 +60,25 @@ def main():
             if extension == '':
                 print(f"Wrong input", extension)
                 continue
-
             os.system('cls')
+
+            print("Loading model...")
+            translator = translations('NLLB200', 'cuda', 'eng')
+            os.system('cls')
+
+            lang_list = translator.get_language_codes()
+            for lang in lang_list:
+                print(lang)
+            target_lang = input('\n Choose target language [source = english]:\n')
+            if target_lang not in lang_list:
+                print("Wrong input")
+                continue
+            translator.set_target_lang(target_lang)
+            os.system('cls')
+
             match extension:
                 case '.epub':
-                    process_epub(input_file, bilingual=(choice == '3'))
+                    process_epub(translator, input_file, bilingual=(choice == '3'))
                 case '.txt':
                     print(f"Processing TXT file")
                 case _:
@@ -76,16 +90,14 @@ def main():
             break
 
 
-def process_epub(input_file, bilingual):
-    html_objects = processor.book_init(input_file, temp_path, output_path)
+def process_epub(translator, input_file, bilingual):
+    html_objects = text_processor.book_init(input_file, temp_path, output_path)
 
     confirm = input("\nConfirm translate y/n: ")
     os.system('cls')
     if confirm.lower() == 'y':
-        start_time = time.time()
-        processor.process_book_files(html_objects, temp_path, output_path, bilingual)
-        elapsed_time = time.time() - start_time
-        input(f'\nDone! Full processing time: {round(elapsed_time)} seconds')
+        text_processor.process_book_files(translator, html_objects, temp_path, output_path, bilingual)
+        input(f'\nBook translated!')
         os.system('cls')
     else:
         input("Translation canceled.")
