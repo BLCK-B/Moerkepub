@@ -1,5 +1,7 @@
 import os
 import time
+
+import language_codes
 from translations import translations
 import text_processor
 
@@ -30,6 +32,19 @@ def main():
                 print(f'Full processing time: {round(elapsed_time)} seconds')
             else:
                 print("Translation canceled.")
+
+        elif choice == 'd':
+            # print("Loading model...")
+            # translator = translations('NLLB200', 'cuda', 'eng')
+            # os.system('cls')
+            #
+            # lang_list = translator.get_language_codes()
+            # for lang in lang_list:
+            #     print(lang)
+            # target_lang = input('\n Choose target language [source = english]:\n')
+            # if target_lang not in lang_list:
+            #     print("Wrong input")
+            language_codes.search()
 
         elif choice == '1':
             while True:

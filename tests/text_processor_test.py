@@ -1,9 +1,6 @@
 import pytest
-import os
-import shutil
-import text_processor
-from unittest.mock import patch
 from bs4 import BeautifulSoup
+
 import text_processor as processor
 
 text = []
