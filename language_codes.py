@@ -4,14 +4,15 @@ import os
 import keyboard
 
 
-def __find_by_code__(search_code, all_codes):
+def __find_by_code__(search_code, json_all_codes):
     if isinstance(search_code, list):
         search_code = str(search_code[0])
 
-    for lang in all_codes:
-        if lang['alpha2'].lower() == search_code or \
-                lang['alpha3-b'].lower() == search_code or \
-                lang['alpha3-t'].lower() == search_code:
+    for lang in json_all_codes:
+        if (lang['alpha2'] and lang['alpha2'].lower() == search_code) or \
+                (lang['alpha3-b'] and lang['alpha3-b'].lower() == search_code) or \
+                 (lang['alpha3-t'] and lang['alpha3-t'].lower() == search_code):
+
             return lang
     return None
 
@@ -40,15 +41,15 @@ def map_languages(model_langs, json_path):
     return mapped_json
 
 
-def __find__(user_input, languages):
+def __find_suggestions__(user_input, json_all_codes):
     user_input = user_input.lower()
     suggestions = set()
 
-    for lang in languages:
-        if lang['alpha2'].lower().startswith(user_input) or \
-                lang['alpha3-b'].lower().startswith(user_input) or \
-                lang['alpha3-t'].lower().startswith(user_input) or \
-                lang['English'].lower().startswith(user_input):
+    for lang in json_all_codes:
+        if (lang['alpha2'] and lang['alpha2'].lower().startswith(user_input)) or \
+                (lang['alpha3-b'] and lang['alpha3-b'].lower().startswith(user_input)) or \
+                (lang['alpha3-t'] and lang['alpha3-t'].lower().startswith(user_input)) or \
+                (lang['English'] and lang['English'].lower().startswith(user_input)):
 
             code_parts = []
             for field in lang.values():
@@ -59,8 +60,11 @@ def __find__(user_input, languages):
     return list(suggestions)
 
 
-def search():
+def search(json_path):
     user_input = ""
+    with open(json_path, 'r') as file:
+        json_all_codes = json.load(file)
+
     while True:
         print(f"\r{user_input}", end='')
         event = keyboard.read_event()
@@ -75,7 +79,7 @@ def search():
 
             if len(user_input) >= 2:
                 os.system('cls||clear')
-                suggestions = __find__(user_input, languages)
+                suggestions = __find_suggestions__(user_input, json_all_codes)
                 if suggestions:
                     for suggestion in sorted(suggestions):
                         print(suggestion)

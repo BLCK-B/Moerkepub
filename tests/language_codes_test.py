@@ -61,3 +61,26 @@ def test_map_language_wrong_input(caplog):
         mapped = language_codes.map_languages('wrong', test_codes_path)
 
 
+def test_find_suggestions_single_entry():
+    suggestions = language_codes.__find_suggestions__('ger', json_all_codes)
+
+    assert len(suggestions) == 1
+
+
+def test_find_suggestion_by_name():
+    suggestions = language_codes.__find_suggestions__('GERMAN', json_all_codes)
+
+    assert len(suggestions) == 1
+
+
+def test_find_suggestions_no_match():
+    suggestions = language_codes.__find_suggestions__('no-match', json_all_codes)
+
+    assert not suggestions
+
+
+def test_find_suggestions_more_matches():
+    suggestions = language_codes.__find_suggestions__('af', json_all_codes)
+
+    assert len(suggestions) == 3
+
