@@ -1,3 +1,4 @@
+import json
 import os
 import time
 
@@ -34,17 +35,18 @@ def main():
                 print("Translation canceled.")
 
         elif choice == 'd':
-            # print("Loading model...")
-            # translator = translations('NLLB200', 'cuda', 'eng')
-            # os.system('cls')
-            #
-            # lang_list = translator.get_language_codes()
-            # for lang in lang_list:
-            #     print(lang)
-            # target_lang = input('\n Choose target language [source = english]:\n')
-            # if target_lang not in lang_list:
-            #     print("Wrong input")
-            language_codes.search()
+
+            print("Loading model...")
+            translator = translations('NLLB200', 'cuda', 'eng')
+            os.system('cls')
+
+            model_langs = translator.get_language_codes()
+            for k in model_langs:
+                print(k)
+
+            json_mapped_langs = language_codes.map_languages(model_langs)
+
+            # language_codes.search()
 
         elif choice == '1':
             while True:
