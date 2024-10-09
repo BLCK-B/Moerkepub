@@ -8,6 +8,7 @@ import text_processor
 
 output_path = r"sideTesting/output/exportBook.epub"
 temp_path = r"sideTesting/extracted.epub"
+json_codes_path = r"sideTesting/language_codes.json"
 
 
 def main():
@@ -38,15 +39,16 @@ def main():
 
             print("Loading model...")
             translator = translations('NLLB200', 'cuda', 'eng')
+            model_langs = translator.get_language_codes()
+            mapped_langs = language_codes.map_languages(model_langs, json_codes_path)
             os.system('cls')
 
-            model_langs = translator.get_language_codes()
-            for k in model_langs:
-                print(k)
-
-            json_mapped_langs = language_codes.map_languages(model_langs)
-
-            # language_codes.search()
+            source_lang = language_codes.search(mapped_langs, 'Select source language.')
+            os.system('cls||clear')
+            target_lang = language_codes.search(mapped_langs, f'Source: {source_lang}. Select target language.')
+            os.system('cls||clear')
+            print(f'{source_lang} -> {target_lang}')
+            print(input())
 
         elif choice == '1':
             while True:
@@ -80,19 +82,18 @@ def main():
             os.system('cls')
 
             print("Loading model...")
-            translator = translations('NLLB200', 'cuda', 'eng')
+            translator = translations('NLLB200', 'cuda', 'eng') # todo: set target lang
             os.system('cls')
 
-            lang_list = translator.get_language_codes()
-            for lang in lang_list:
-                print(lang)
-            target_lang = input('\n Choose target language [source = english]:\n')
-            if target_lang not in lang_list:
-                print("Wrong input")
-                continue
-            translator.set_target_lang(target_lang)
+            model_langs = translator.get_language_codes()
+            mapped_langs = language_codes.map_languages(model_langs, json_codes_path)
             os.system('cls')
 
+            source_lang = language_codes.search(mapped_langs, 'Select source language.')
+            os.system('cls||clear')
+            target_lang = language_codes.search(mapped_langs, f'Source: {source_lang}. Select target language.')
+            os.system('cls||clear')
+            translator.set_target_lang(target_lang) # todo: get model key
             match extension:
                 case '.epub':
                     process_epub(translator, input_file, bilingual=(choice == '3'))
@@ -110,8 +111,11 @@ def main():
 def process_epub(translator, input_file, bilingual):
     html_objects = text_processor.book_init(input_file, temp_path, output_path)
 
-    confirm = input("\nConfirm translate y/n: ")
-    os.system('cls')
+    confirm = None
+    while confirm not in ['y', 'n']:
+        confirm = input("\nConfirm translate y/n: ").strip().lower()
+        os.system('cls')
+
     if confirm.lower() == 'y':
         text_processor.process_book_files(translator, html_objects, temp_path, output_path, bilingual)
         input(f'\nBook translated!')

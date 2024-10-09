@@ -1,6 +1,8 @@
 import json
 import logging
 import os
+import sys
+
 import keyboard
 
 
@@ -11,8 +13,7 @@ def __find_by_code__(search_code, json_all_codes):
     for lang in json_all_codes:
         if (lang['alpha2'] and lang['alpha2'].lower() == search_code) or \
                 (lang['alpha3-b'] and lang['alpha3-b'].lower() == search_code) or \
-                 (lang['alpha3-t'] and lang['alpha3-t'].lower() == search_code):
-
+                (lang['alpha3-t'] and lang['alpha3-t'].lower() == search_code):
             return lang
     return None
 
@@ -30,7 +31,6 @@ def map_languages(model_langs, json_path):
                 continue
             mapped_json[model_key] = json.loads(json.dumps(json_entry))
             mapped_json[model_key]['model-key'] = model_key
-            print(mapped_json[model_key])
 
     elif isinstance(model_langs, list):
         print("not done yet")
@@ -41,11 +41,12 @@ def map_languages(model_langs, json_path):
     return mapped_json
 
 
-def __find_suggestions__(user_input, json_all_codes):
+def __find_suggestions__(user_input, json_mapped):
     user_input = user_input.lower()
-    suggestions = set()
+    suggestions = []
+    json_values = json_mapped.values() if isinstance(json_mapped, dict) else json_mapped
 
-    for lang in json_all_codes:
+    for lang in json_values:
         if (lang['alpha2'] and lang['alpha2'].lower().startswith(user_input)) or \
                 (lang['alpha3-b'] and lang['alpha3-b'].lower().startswith(user_input)) or \
                 (lang['alpha3-t'] and lang['alpha3-t'].lower().startswith(user_input)) or \
@@ -55,15 +56,15 @@ def __find_suggestions__(user_input, json_all_codes):
             for field in lang.values():
                 if field:
                     code_parts.append(field)
-            suggestions.add(" - ".join(code_parts))
+            suggestions.append(code_parts)
 
     return list(suggestions)
 
 
-def search(json_path):
-    user_input = ""
-    with open(json_path, 'r') as file:
-        json_all_codes = json.load(file)
+def search(json_mapped, message):
+    user_input = ''
+    prev_suggestions = []
+    print(message + '\n')
 
     while True:
         print(f"\r{user_input}", end='')
@@ -72,17 +73,22 @@ def search(json_path):
             if event.name == 'backspace':
                 user_input = user_input[:-1]
             elif event.name == 'enter':
-                print("\nYou entered:", user_input)
-                user_input = ""
+                if len(prev_suggestions) == 1:
+                    return __find_suggestions__(user_input, json_mapped)
+                else:
+                    print("\nSpecify a single language.")
+                    continue
             elif len(event.name) == 1:
                 user_input += event.name
 
             if len(user_input) >= 2:
                 os.system('cls||clear')
-                suggestions = __find_suggestions__(user_input, json_all_codes)
+                print(message + '\n')
+                suggestions = __find_suggestions__(user_input, json_mapped)
+                prev_suggestions = suggestions
                 if suggestions:
                     for suggestion in sorted(suggestions):
-                        print(suggestion)
+                        print(' - '.join(suggestion))
                     print('\n')
                 else:
                     print("\nNo language found.")
