@@ -1,5 +1,6 @@
 import os
 import time
+import persistence
 
 import language_codes
 import text_processor
@@ -20,36 +21,13 @@ def main():
 
         choice = input("Select 1-3: ")
         os.system('cls')
-        if choice == '0':
-            epub_path = r"sideTesting/diary.epub"
 
-            text_processor.book_init(epub_path, temp_path, output_path)
-
-            confirm = input("\nConfirm translate y/n: ")
-            if confirm.lower() == 'y':
-                start_time = time.time()
-                print("missing here")
-                elapsed_time = time.time() - start_time
-                print(f'Full processing time: {round(elapsed_time)} seconds')
-            else:
-                print("Translation canceled.")
-
-        elif choice == 'd':
-
-            print("Loading model...")
-            translator = translations('NLLB200', 'cuda', 'eng')
-            model_langs = translator.get_language_codes()
-            mapped_langs = language_codes.map_languages(model_langs, json_codes_path)
-            os.system('cls')
-
-            source_lang = language_codes.search(mapped_langs, 'Select source language.')
-            os.system('cls||clear')
-            target_lang = language_codes.search(mapped_langs, f'Source: {source_lang}. Select target language.')
-            os.system('cls||clear')
-            print(f'{source_lang} -> {target_lang}')
-            print(input())
+        if choice == 'd':
+            json_settings = persistence.load()
+            print(json_settings.get('selected_model'), json_settings.get('selected_hw'))
 
         elif choice == '1':
+            json_settings = persistence.load()
             while True:
                 os.system('cls')
                 print("0. Back")
@@ -62,13 +40,17 @@ def main():
                     os.system('cls')
                     break
                 elif choice == '1':
-                    print("ok")
+                    persistence.set(json_settings, 'selected_model', 'NLLB200')
+                    persistence.set(json_settings, 'selected_hw', 'cuda')
                 elif choice == '2':
-                    print("ok")
+                    persistence.set(json_settings, 'selected_model', 'NLLB200')
+                    persistence.set(json_settings, 'selected_hw', 'cpu')
                 elif choice == '3':
-                    print("ok")
+                    persistence.set(json_settings, 'selected_model', 'small100')
+                    persistence.set(json_settings, 'selected_hw', 'cuda')
                 elif choice == '4':
-                    print("ok")
+                    persistence.set(json_settings, 'selected_model', 'small100')
+                    persistence.set(json_settings, 'selected_hw', 'cpu')
 
         elif choice == '2' or choice == '3':
             input_file = input("Drag and drop EPUB | TXT file.\n\n")
