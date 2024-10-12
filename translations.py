@@ -1,7 +1,7 @@
 from progress.bar import IncrementalBar
 import os
 
-import model_NLLB200
+from models import model_NLLB200
 
 
 class translations:
@@ -12,7 +12,7 @@ class translations:
 
     def instantiate_model(self, hw, source_lang, target_lang):
         if self.model_name == "NLLB200":
-            from model_NLLB200 import Model
+            from models.model_NLLB200 import Model
             self.model = Model(hw, source_lang, target_lang)
         else:
             raise Exception("Model not found")

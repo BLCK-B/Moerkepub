@@ -1,14 +1,13 @@
-import json
 import os
 import time
 
 import language_codes
-from translations import translations
 import text_processor
+from translations import translations
 
 output_path = r"sideTesting/output/exportBook.epub"
 temp_path = r"sideTesting/extracted.epub"
-json_codes_path = r"sideTesting/language_codes.json"
+json_codes_path = r"language_codes.json"
 
 
 def main():
@@ -83,7 +82,6 @@ def main():
             translator = translations('NLLB200')
             model_langs = translator.get_language_codes()
             mapped_langs = language_codes.map_languages(model_langs, json_codes_path)
-            # os.system('cls||clear') TODO: fill missing codes
 
             source_lang = language_codes.search(mapped_langs, 'Select source language.')
             os.system('cls||clear')

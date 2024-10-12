@@ -1,0 +1,3092 @@
+[
+    {
+        "alpha3-b": "aar",
+        "alpha3-t": null,
+        "alpha2": "aa",
+        "English": "Afar"
+    },
+    {
+        "alpha3-b": "abk",
+        "alpha3-t": null,
+        "alpha2": "ab",
+        "English": "Abkhazian"
+    },
+    {
+        "alpha3-b": "ace",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Achinese"
+    },
+    {
+        "alpha3-b": "ach",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Acoli"
+    },
+    {
+        "alpha3-b": "acm",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Mesopotamian Arabic"
+    },
+    {
+        "alpha3-b": "acq",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Ta'izzi-Adeni Arabic"
+    },
+    {
+        "alpha3-b": "ada",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Adangme"
+    },
+    {
+        "alpha3-b": "ady",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Adyghe; Adygei"
+    },
+    {
+        "alpha3-b": "aeb",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Tunisian Arabic"
+    },
+    {
+        "alpha3-b": "afa",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Afro-Asiatic languages"
+    },
+    {
+        "alpha3-b": "afh",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Afrihili"
+    },
+    {
+        "alpha3-b": "afr",
+        "alpha3-t": null,
+        "alpha2": "af",
+        "English": "Afrikaans"
+    },
+    {
+        "alpha3-b": "ain",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Ainu"
+    },
+    {
+        "alpha3-b": "ajp",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "South Levantine Arabic"
+    },
+    {
+        "alpha3-b": "aka",
+        "alpha3-t": null,
+        "alpha2": "ak",
+        "English": "Akan"
+    },
+    {
+        "alpha3-b": "akk",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Akkadian"
+    },
+    {
+        "alpha3-b": "alb",
+        "alpha3-t": "sqi",
+        "alpha2": "sq",
+        "English": "Albanian"
+    },
+    {
+        "alpha3-b": "ale",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Aleut"
+    },
+    {
+        "alpha3-b": "alg",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Algonquian languages"
+    },
+    {
+        "alpha3-b": "als",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Tosk Albanian"
+    },
+    {
+        "alpha3-b": "alt",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Southern Altai"
+    },
+    {
+        "alpha3-b": "amh",
+        "alpha3-t": null,
+        "alpha2": "am",
+        "English": "Amharic"
+    },
+    {
+        "alpha3-b": "anp",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Angika"
+    },
+    {
+        "alpha3-b": "apa",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Apache languages"
+    },
+    {
+        "alpha3-b": "apc",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Levantine Arabic"
+    },
+    {
+        "alpha3-b": "ara",
+        "alpha3-t": null,
+        "alpha2": "ar",
+        "English": "Arabic"
+    },
+    {
+        "alpha3-b": "arb",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Standard Arabic"
+    },
+    {
+        "alpha3-b": "arc",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Official Aramaic (700-300 BCE); Imperial Aramaic (700-300 BCE)"
+    },
+    {
+        "alpha3-b": "arg",
+        "alpha3-t": null,
+        "alpha2": "an",
+        "English": "Aragonese"
+    },
+    {
+        "alpha3-b": "arm",
+        "alpha3-t": "hye",
+        "alpha2": "hy",
+        "English": "Armenian"
+    },
+    {
+        "alpha3-b": "arn",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Mapudungun; Mapuche"
+    },
+    {
+        "alpha3-b": "arp",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Arapaho"
+    },
+    {
+        "alpha3-b": "ars",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Najdi Arabic"
+    },
+    {
+        "alpha3-b": "art",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Artificial languages"
+    },
+    {
+        "alpha3-b": "arw",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Arawak"
+    },
+    {
+        "alpha3-b": "ary",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Moroccan Arabic"
+    },
+    {
+        "alpha3-b": "arz",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Egyptian Arabic"
+    },
+    {
+        "alpha3-b": "asm",
+        "alpha3-t": null,
+        "alpha2": "as",
+        "English": "Assamese"
+    },
+    {
+        "alpha3-b": "ast",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Asturian; Bable; Leonese; Asturleonese"
+    },
+    {
+        "alpha3-b": "ath",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Athapascan languages"
+    },
+    {
+        "alpha3-b": "aus",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Australian languages"
+    },
+    {
+        "alpha3-b": "ava",
+        "alpha3-t": null,
+        "alpha2": "av",
+        "English": "Avaric"
+    },
+    {
+        "alpha3-b": "ave",
+        "alpha3-t": null,
+        "alpha2": "ae",
+        "English": "Avestan"
+    },
+    {
+        "alpha3-b": "awa",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Awadhi"
+    },
+    {
+        "alpha3-b": "aym",
+        "alpha3-t": null,
+        "alpha2": "ay",
+        "English": "Aymara"
+    },
+    {
+        "alpha3-b": "ayr",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Central Aymara"
+    },
+    {
+        "alpha3-b": "azb",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "South Azerbaijani"
+    },
+    {
+        "alpha3-b": "aze",
+        "alpha3-t": null,
+        "alpha2": "az",
+        "English": "Azerbaijani"
+    },
+    {
+        "alpha3-b": "azj",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "North Azerbaijani"
+    },
+    {
+        "alpha3-b": "bad",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Banda languages"
+    },
+    {
+        "alpha3-b": "bai",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Bamileke languages"
+    },
+    {
+        "alpha3-b": "bak",
+        "alpha3-t": null,
+        "alpha2": "ba",
+        "English": "Bashkir"
+    },
+    {
+        "alpha3-b": "bal",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Baluchi"
+    },
+    {
+        "alpha3-b": "bam",
+        "alpha3-t": null,
+        "alpha2": "bm",
+        "English": "Bambara"
+    },
+    {
+        "alpha3-b": "ban",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Balinese"
+    },
+    {
+        "alpha3-b": "baq",
+        "alpha3-t": "eus",
+        "alpha2": "eu",
+        "English": "Basque"
+    },
+    {
+        "alpha3-b": "bas",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Basa"
+    },
+    {
+        "alpha3-b": "bat",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Baltic languages"
+    },
+    {
+        "alpha3-b": "bej",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Beja; Bedawiyet"
+    },
+    {
+        "alpha3-b": "bel",
+        "alpha3-t": null,
+        "alpha2": "be",
+        "English": "Belarusian"
+    },
+    {
+        "alpha3-b": "bem",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Bemba"
+    },
+    {
+        "alpha3-b": "ben",
+        "alpha3-t": null,
+        "alpha2": "bn",
+        "English": "Bengali"
+    },
+    {
+        "alpha3-b": "ber",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Berber languages"
+    },
+    {
+        "alpha3-b": "bho",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Bhojpuri"
+    },
+    {
+        "alpha3-b": "bih",
+        "alpha3-t": null,
+        "alpha2": "bh",
+        "English": "Bihari languages"
+    },
+    {
+        "alpha3-b": "bik",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Bikol"
+    },
+    {
+        "alpha3-b": "bin",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Bini; Edo"
+    },
+    {
+        "alpha3-b": "bis",
+        "alpha3-t": null,
+        "alpha2": "bi",
+        "English": "Bislama"
+    },
+    {
+        "alpha3-b": "bjn",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Banjar "
+    },
+    {
+        "alpha3-b": "bla",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Siksika"
+    },
+    {
+        "alpha3-b": "bnt",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Bantu (Other)"
+    },
+    {
+        "alpha3-b": "bos",
+        "alpha3-t": null,
+        "alpha2": "bs",
+        "English": "Bosnian"
+    },
+    {
+        "alpha3-b": "bra",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Braj"
+    },
+    {
+        "alpha3-b": "bre",
+        "alpha3-t": null,
+        "alpha2": "br",
+        "English": "Breton"
+    },
+    {
+        "alpha3-b": "btk",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Batak languages"
+    },
+    {
+        "alpha3-b": "bua",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Buriat"
+    },
+    {
+        "alpha3-b": "bug",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Buginese"
+    },
+    {
+        "alpha3-b": "bul",
+        "alpha3-t": null,
+        "alpha2": "bg",
+        "English": "Bulgarian"
+    },
+    {
+        "alpha3-b": "bur",
+        "alpha3-t": "mya",
+        "alpha2": "my",
+        "English": "Burmese"
+    },
+    {
+        "alpha3-b": "byn",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Blin; Bilin"
+    },
+    {
+        "alpha3-b": "cad",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Caddo"
+    },
+    {
+        "alpha3-b": "cai",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Central American Indian languages"
+    },
+    {
+        "alpha3-b": "car",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Galibi Carib"
+    },
+    {
+        "alpha3-b": "cat",
+        "alpha3-t": null,
+        "alpha2": "ca",
+        "English": "Catalan; Valencian"
+    },
+    {
+        "alpha3-b": "cau",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Caucasian languages"
+    },
+    {
+        "alpha3-b": "ceb",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Cebuano"
+    },
+    {
+        "alpha3-b": "cel",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Celtic languages"
+    },
+    {
+        "alpha3-b": "cha",
+        "alpha3-t": null,
+        "alpha2": "ch",
+        "English": "Chamorro"
+    },
+    {
+        "alpha3-b": "chb",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Chibcha"
+    },
+    {
+        "alpha3-b": "che",
+        "alpha3-t": null,
+        "alpha2": "ce",
+        "English": "Chechen"
+    },
+    {
+        "alpha3-b": "chg",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Chagatai"
+    },
+    {
+        "alpha3-b": "chi",
+        "alpha3-t": "zho",
+        "alpha2": "zh",
+        "English": "Chinese"
+    },
+    {
+        "alpha3-b": "chk",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Chuukese"
+    },
+    {
+        "alpha3-b": "chm",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Mari"
+    },
+    {
+        "alpha3-b": "chn",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Chinook jargon"
+    },
+    {
+        "alpha3-b": "cho",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Choctaw"
+    },
+    {
+        "alpha3-b": "chp",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Chipewyan; Dene Suline"
+    },
+    {
+        "alpha3-b": "chr",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Cherokee"
+    },
+    {
+        "alpha3-b": "chv",
+        "alpha3-t": null,
+        "alpha2": "cv",
+        "English": "Chuvash"
+    },
+    {
+        "alpha3-b": "chy",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Cheyenne"
+    },
+    {
+        "alpha3-b": "cjk",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Chokwe"
+    },
+    {
+        "alpha3-b": "ckb",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Central Kurdish"
+    },
+    {
+        "alpha3-b": "cmc",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Chamic languages"
+    },
+    {
+        "alpha3-b": "cop",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Coptic"
+    },
+    {
+        "alpha3-b": "cor",
+        "alpha3-t": null,
+        "alpha2": "kw",
+        "English": "Cornish"
+    },
+    {
+        "alpha3-b": "cos",
+        "alpha3-t": null,
+        "alpha2": "co",
+        "English": "Corsican"
+    },
+    {
+        "alpha3-b": "cpe",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Creoles and pidgins, English based"
+    },
+    {
+        "alpha3-b": "cpf",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Creoles and pidgins, French-based"
+    },
+    {
+        "alpha3-b": "cpp",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Creoles and pidgins, Portuguese-based"
+    },
+    {
+        "alpha3-b": "cre",
+        "alpha3-t": null,
+        "alpha2": "cr",
+        "English": "Cree"
+    },
+    {
+        "alpha3-b": "crh",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Crimean Tatar; Crimean Turkish"
+    },
+    {
+        "alpha3-b": "crp",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Creoles and pidgins"
+    },
+    {
+        "alpha3-b": "csb",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Kashubian"
+    },
+    {
+        "alpha3-b": "cus",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Cushitic languages"
+    },
+    {
+        "alpha3-b": "cze",
+        "alpha3-t": "ces",
+        "alpha2": "cs",
+        "English": "Czech"
+    },
+    {
+        "alpha3-b": "dak",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Dakota"
+    },
+    {
+        "alpha3-b": "dan",
+        "alpha3-t": null,
+        "alpha2": "da",
+        "English": "Danish"
+    },
+    {
+        "alpha3-b": "dar",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Dargwa"
+    },
+    {
+        "alpha3-b": "day",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Land Dayak languages"
+    },
+    {
+        "alpha3-b": "del",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Delaware"
+    },
+    {
+        "alpha3-b": "den",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Slave (Athapascan)"
+    },
+    {
+        "alpha3-b": "dgr",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Dogrib"
+    },
+    {
+        "alpha3-b": "dik",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Southwestern Dinka"
+    },
+    {
+        "alpha3-b": "din",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Dinka"
+    },
+    {
+        "alpha3-b": "div",
+        "alpha3-t": null,
+        "alpha2": "dv",
+        "English": "Divehi; Dhivehi; Maldivian"
+    },
+    {
+        "alpha3-b": "doi",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Dogri"
+    },
+    {
+        "alpha3-b": "dra",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Dravidian languages"
+    },
+    {
+        "alpha3-b": "dsb",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Lower Sorbian"
+    },
+    {
+        "alpha3-b": "dua",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Duala"
+    },
+    {
+        "alpha3-b": "dut",
+        "alpha3-t": "nld",
+        "alpha2": "nl",
+        "English": "Dutch; Flemish"
+    },
+    {
+        "alpha3-b": "dyu",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Dyula"
+    },
+    {
+        "alpha3-b": "dzo",
+        "alpha3-t": null,
+        "alpha2": "dz",
+        "English": "Dzongkha"
+    },
+    {
+        "alpha3-b": "efi",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Efik"
+    },
+    {
+        "alpha3-b": "egy",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Egyptian (Ancient)"
+    },
+    {
+        "alpha3-b": "eka",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Ekajuk"
+    },
+    {
+        "alpha3-b": "elx",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Elamite"
+    },
+    {
+        "alpha3-b": "eng",
+        "alpha3-t": null,
+        "alpha2": "en",
+        "English": "English"
+    },
+    {
+        "alpha3-b": "epo",
+        "alpha3-t": null,
+        "alpha2": "eo",
+        "English": "Esperanto"
+    },
+    {
+        "alpha3-b": "est",
+        "alpha3-t": null,
+        "alpha2": "et",
+        "English": "Estonian"
+    },
+    {
+        "alpha3-b": "ewe",
+        "alpha3-t": null,
+        "alpha2": "ee",
+        "English": "Ewe"
+    },
+    {
+        "alpha3-b": "ewo",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Ewondo"
+    },
+    {
+        "alpha3-b": "fan",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Fang"
+    },
+    {
+        "alpha3-b": "fao",
+        "alpha3-t": null,
+        "alpha2": "fo",
+        "English": "Faroese"
+    },
+    {
+        "alpha3-b": "fat",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Fanti"
+    },
+    {
+        "alpha3-b": "fij",
+        "alpha3-t": null,
+        "alpha2": "fj",
+        "English": "Fijian"
+    },
+    {
+        "alpha3-b": "fil",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Filipino; Pilipino"
+    },
+    {
+        "alpha3-b": "fin",
+        "alpha3-t": null,
+        "alpha2": "fi",
+        "English": "Finnish"
+    },
+    {
+        "alpha3-b": "fiu",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Finno-Ugrian languages"
+    },
+    {
+        "alpha3-b": "fon",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Fon"
+    },
+    {
+        "alpha3-b": "fre",
+        "alpha3-t": "fra",
+        "alpha2": "fr",
+        "English": "French"
+    },
+    {
+        "alpha3-b": "frr",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Northern Frisian"
+    },
+    {
+        "alpha3-b": "frs",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Eastern Frisian"
+    },
+    {
+        "alpha3-b": "fry",
+        "alpha3-t": null,
+        "alpha2": "fy",
+        "English": "Western Frisian"
+    },
+    {
+        "alpha3-b": "ful",
+        "alpha3-t": null,
+        "alpha2": "ff",
+        "English": "Fulah"
+    },
+    {
+        "alpha3-b": "fur",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Friulian"
+    },
+    {
+        "alpha3-b": "fuv",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Nigerian Fulfulde"
+    },
+    {
+        "alpha3-b": "gaa",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Ga"
+    },
+    {
+        "alpha3-b": "gay",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Gayo"
+    },
+    {
+        "alpha3-b": "gaz",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "West Central Oromo"
+    },
+    {
+        "alpha3-b": "gba",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Gbaya"
+    },
+    {
+        "alpha3-b": "gem",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Germanic languages"
+    },
+    {
+        "alpha3-b": "geo",
+        "alpha3-t": "kat",
+        "alpha2": "ka",
+        "English": "Georgian"
+    },
+    {
+        "alpha3-b": "ger",
+        "alpha3-t": "deu",
+        "alpha2": "de",
+        "English": "German"
+    },
+    {
+        "alpha3-b": "gez",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Geez"
+    },
+    {
+        "alpha3-b": "gil",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Gilbertese"
+    },
+    {
+        "alpha3-b": "gla",
+        "alpha3-t": null,
+        "alpha2": "gd",
+        "English": "Gaelic; Scottish Gaelic"
+    },
+    {
+        "alpha3-b": "gle",
+        "alpha3-t": null,
+        "alpha2": "ga",
+        "English": "Irish"
+    },
+    {
+        "alpha3-b": "glg",
+        "alpha3-t": null,
+        "alpha2": "gl",
+        "English": "Galician"
+    },
+    {
+        "alpha3-b": "glv",
+        "alpha3-t": null,
+        "alpha2": "gv",
+        "English": "Manx"
+    },
+    {
+        "alpha3-b": "gon",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Gondi"
+    },
+    {
+        "alpha3-b": "gor",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Gorontalo"
+    },
+    {
+        "alpha3-b": "got",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Gothic"
+    },
+    {
+        "alpha3-b": "grb",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Grebo"
+    },
+    {
+        "alpha3-b": "gre",
+        "alpha3-t": "ell",
+        "alpha2": "el",
+        "English": "Greek, Modern"
+    },
+    {
+        "alpha3-b": "grn",
+        "alpha3-t": null,
+        "alpha2": "gn",
+        "English": "Guarani"
+    },
+    {
+        "alpha3-b": "gsw",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Swiss German; Alemannic; Alsatian"
+    },
+    {
+        "alpha3-b": "guj",
+        "alpha3-t": null,
+        "alpha2": "gu",
+        "English": "Gujarati"
+    },
+    {
+        "alpha3-b": "gwi",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Gwich'in"
+    },
+    {
+        "alpha3-b": "hai",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Haida"
+    },
+    {
+        "alpha3-b": "hat",
+        "alpha3-t": null,
+        "alpha2": "ht",
+        "English": "Haitian; Haitian Creole"
+    },
+    {
+        "alpha3-b": "hau",
+        "alpha3-t": null,
+        "alpha2": "ha",
+        "English": "Hausa"
+    },
+    {
+        "alpha3-b": "haw",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Hawaiian"
+    },
+    {
+        "alpha3-b": "heb",
+        "alpha3-t": null,
+        "alpha2": "he",
+        "English": "Hebrew"
+    },
+    {
+        "alpha3-b": "her",
+        "alpha3-t": null,
+        "alpha2": "hz",
+        "English": "Herero"
+    },
+    {
+        "alpha3-b": "hil",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Hiligaynon"
+    },
+    {
+        "alpha3-b": "him",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Himachali languages; Western Pahari languages"
+    },
+    {
+        "alpha3-b": "hin",
+        "alpha3-t": null,
+        "alpha2": "hi",
+        "English": "Hindi"
+    },
+    {
+        "alpha3-b": "hit",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Hittite"
+    },
+    {
+        "alpha3-b": "hmn",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Hmong; Mong"
+    },
+    {
+        "alpha3-b": "hmo",
+        "alpha3-t": null,
+        "alpha2": "ho",
+        "English": "Hiri Motu"
+    },
+    {
+        "alpha3-b": "hne",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Chhattisgarhi"
+    },
+    {
+        "alpha3-b": "hrv",
+        "alpha3-t": null,
+        "alpha2": "hr",
+        "English": "Croatian"
+    },
+    {
+        "alpha3-b": "hsb",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Upper Sorbian"
+    },
+    {
+        "alpha3-b": "hun",
+        "alpha3-t": null,
+        "alpha2": "hu",
+        "English": "Hungarian"
+    },
+    {
+        "alpha3-b": "hup",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Hupa"
+    },
+    {
+        "alpha3-b": "iba",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Iban"
+    },
+    {
+        "alpha3-b": "ibo",
+        "alpha3-t": null,
+        "alpha2": "ig",
+        "English": "Igbo"
+    },
+    {
+        "alpha3-b": "ice",
+        "alpha3-t": "isl",
+        "alpha2": "is",
+        "English": "Icelandic"
+    },
+    {
+        "alpha3-b": "ido",
+        "alpha3-t": null,
+        "alpha2": "io",
+        "English": "Ido"
+    },
+    {
+        "alpha3-b": "iii",
+        "alpha3-t": null,
+        "alpha2": "ii",
+        "English": "Sichuan Yi; Nuosu"
+    },
+    {
+        "alpha3-b": "ijo",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Ijo languages"
+    },
+    {
+        "alpha3-b": "iku",
+        "alpha3-t": null,
+        "alpha2": "iu",
+        "English": "Inuktitut"
+    },
+    {
+        "alpha3-b": "ile",
+        "alpha3-t": null,
+        "alpha2": "ie",
+        "English": "Interlingue; Occidental"
+    },
+    {
+        "alpha3-b": "ilo",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Iloko"
+    },
+    {
+        "alpha3-b": "ina",
+        "alpha3-t": null,
+        "alpha2": "ia",
+        "English": "Interlingua (International Auxiliary Language Association)"
+    },
+    {
+        "alpha3-b": "inc",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Indic languages"
+    },
+    {
+        "alpha3-b": "ind",
+        "alpha3-t": null,
+        "alpha2": "id",
+        "English": "Indonesian"
+    },
+    {
+        "alpha3-b": "ine",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Indo-European languages"
+    },
+    {
+        "alpha3-b": "inh",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Ingush"
+    },
+    {
+        "alpha3-b": "ipk",
+        "alpha3-t": null,
+        "alpha2": "ik",
+        "English": "Inupiaq"
+    },
+    {
+        "alpha3-b": "ira",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Iranian languages"
+    },
+    {
+        "alpha3-b": "iro",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Iroquoian languages"
+    },
+    {
+        "alpha3-b": "ita",
+        "alpha3-t": null,
+        "alpha2": "it",
+        "English": "Italian"
+    },
+    {
+        "alpha3-b": "jav",
+        "alpha3-t": null,
+        "alpha2": "jv",
+        "English": "Javanese"
+    },
+    {
+        "alpha3-b": "jbo",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Lojban"
+    },
+    {
+        "alpha3-b": "jpn",
+        "alpha3-t": null,
+        "alpha2": "ja",
+        "English": "Japanese"
+    },
+    {
+        "alpha3-b": "jpr",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Judeo-Persian"
+    },
+    {
+        "alpha3-b": "jrb",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Judeo-Arabic"
+    },
+    {
+        "alpha3-b": "kaa",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Kara-Kalpak"
+    },
+    {
+        "alpha3-b": "kab",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Kabyle"
+    },
+    {
+        "alpha3-b": "kac",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Kachin; Jingpho"
+    },
+    {
+        "alpha3-b": "kal",
+        "alpha3-t": null,
+        "alpha2": "kl",
+        "English": "Kalaallisut; Greenlandic"
+    },
+    {
+        "alpha3-b": "kam",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Kamba"
+    },
+    {
+        "alpha3-b": "kan",
+        "alpha3-t": null,
+        "alpha2": "kn",
+        "English": "Kannada"
+    },
+    {
+        "alpha3-b": "kar",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Karen languages"
+    },
+    {
+        "alpha3-b": "kas",
+        "alpha3-t": null,
+        "alpha2": "ks",
+        "English": "Kashmiri"
+    },
+    {
+        "alpha3-b": "kau",
+        "alpha3-t": null,
+        "alpha2": "kr",
+        "English": "Kanuri"
+    },
+    {
+        "alpha3-b": "kaw",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Kawi"
+    },
+    {
+        "alpha3-b": "kaz",
+        "alpha3-t": null,
+        "alpha2": "kk",
+        "English": "Kazakh"
+    },
+    {
+        "alpha3-b": "kbd",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Kabardian"
+    },
+    {
+        "alpha3-b": "kbp",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Kabiyè"
+    },
+    {
+        "alpha3-b": "kea",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Kabuverdianu"
+    },
+    {
+        "alpha3-b": "kha",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Khasi"
+    },
+    {
+        "alpha3-b": "khi",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Khoisan languages"
+    },
+    {
+        "alpha3-b": "khk",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Halh Mongolian"
+    },
+    {
+        "alpha3-b": "khm",
+        "alpha3-t": null,
+        "alpha2": "km",
+        "English": "Central Khmer"
+    },
+    {
+        "alpha3-b": "kho",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Khotanese; Sakan"
+    },
+    {
+        "alpha3-b": "kik",
+        "alpha3-t": null,
+        "alpha2": "ki",
+        "English": "Kikuyu; Gikuyu"
+    },
+    {
+        "alpha3-b": "kin",
+        "alpha3-t": null,
+        "alpha2": "rw",
+        "English": "Kinyarwanda"
+    },
+    {
+        "alpha3-b": "kir",
+        "alpha3-t": null,
+        "alpha2": "ky",
+        "English": "Kirghiz; Kyrgyz"
+    },
+    {
+        "alpha3-b": "kmb",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Kimbundu"
+    },
+    {
+        "alpha3-b": "kmr",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Northern Kurdish"
+    },
+    {
+        "alpha3-b": "knc",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Central Kanuri"
+    },
+    {
+        "alpha3-b": "kok",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Konkani"
+    },
+    {
+        "alpha3-b": "kom",
+        "alpha3-t": null,
+        "alpha2": "kv",
+        "English": "Komi"
+    },
+    {
+        "alpha3-b": "kon",
+        "alpha3-t": null,
+        "alpha2": "kg",
+        "English": "Kongo"
+    },
+    {
+        "alpha3-b": "kor",
+        "alpha3-t": null,
+        "alpha2": "ko",
+        "English": "Korean"
+    },
+    {
+        "alpha3-b": "kos",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Kosraean"
+    },
+    {
+        "alpha3-b": "kpe",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Kpelle"
+    },
+    {
+        "alpha3-b": "krc",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Karachay-Balkar"
+    },
+    {
+        "alpha3-b": "krl",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Karelian"
+    },
+    {
+        "alpha3-b": "kro",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Kru languages"
+    },
+    {
+        "alpha3-b": "kru",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Kurukh"
+    },
+    {
+        "alpha3-b": "kua",
+        "alpha3-t": null,
+        "alpha2": "kj",
+        "English": "Kuanyama; Kwanyama"
+    },
+    {
+        "alpha3-b": "kum",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Kumyk"
+    },
+    {
+        "alpha3-b": "kur",
+        "alpha3-t": null,
+        "alpha2": "ku",
+        "English": "Kurdish"
+    },
+    {
+        "alpha3-b": "kut",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Kutenai"
+    },
+    {
+        "alpha3-b": "lad",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Ladino"
+    },
+    {
+        "alpha3-b": "lah",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Lahnda"
+    },
+    {
+        "alpha3-b": "lam",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Lamba"
+    },
+    {
+        "alpha3-b": "lao",
+        "alpha3-t": null,
+        "alpha2": "lo",
+        "English": "Lao"
+    },
+    {
+        "alpha3-b": "lat",
+        "alpha3-t": null,
+        "alpha2": "la",
+        "English": "Latin"
+    },
+    {
+        "alpha3-b": "lav",
+        "alpha3-t": null,
+        "alpha2": "lv",
+        "English": "Latvian"
+    },
+    {
+        "alpha3-b": "lez",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Lezghian"
+    },
+    {
+        "alpha3-b": "lij",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Ligurian"
+    },
+    {
+        "alpha3-b": "lim",
+        "alpha3-t": null,
+        "alpha2": "li",
+        "English": "Limburgan; Limburger; Limburgish"
+    },
+    {
+        "alpha3-b": "lin",
+        "alpha3-t": null,
+        "alpha2": "ln",
+        "English": "Lingala"
+    },
+    {
+        "alpha3-b": "lit",
+        "alpha3-t": null,
+        "alpha2": "lt",
+        "English": "Lithuanian"
+    },
+    {
+        "alpha3-b": "lol",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Mongo"
+    },
+    {
+        "alpha3-b": "lmo",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Lombard"
+    },
+    {
+        "alpha3-b": "loz",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Lozi"
+    },
+    {
+        "alpha3-b": "ltz",
+        "alpha3-t": null,
+        "alpha2": "lb",
+        "English": "Luxembourgish; Letzeburgesch"
+    },
+    {
+        "alpha3-b": "ltg",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Latgalian"
+    },
+    {
+        "alpha3-b": "lua",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Luba-Lulua"
+    },
+    {
+        "alpha3-b": "lub",
+        "alpha3-t": null,
+        "alpha2": "lu",
+        "English": "Luba-Katanga"
+    },
+    {
+        "alpha3-b": "lug",
+        "alpha3-t": null,
+        "alpha2": "lg",
+        "English": "Ganda"
+    },
+    {
+        "alpha3-b": "lui",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Luiseno"
+    },
+    {
+        "alpha3-b": "lun",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Lunda"
+    },
+    {
+        "alpha3-b": "luo",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Luo (Kenya and Tanzania)"
+    },
+    {
+        "alpha3-b": "lus",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Lushai"
+    },
+    {
+        "alpha3-b": "lvs",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Standard Latvian"
+    },
+    {
+        "alpha3-b": "mac",
+        "alpha3-t": "mkd",
+        "alpha2": "mk",
+        "English": "Macedonian"
+    },
+    {
+        "alpha3-b": "mad",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Madurese"
+    },
+    {
+        "alpha3-b": "mag",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Magahi"
+    },
+    {
+        "alpha3-b": "mah",
+        "alpha3-t": null,
+        "alpha2": "mh",
+        "English": "Marshallese"
+    },
+    {
+        "alpha3-b": "mai",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Maithili"
+    },
+    {
+        "alpha3-b": "mak",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Makasar"
+    },
+    {
+        "alpha3-b": "mal",
+        "alpha3-t": null,
+        "alpha2": "ml",
+        "English": "Malayalam"
+    },
+    {
+        "alpha3-b": "man",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Mandingo"
+    },
+    {
+        "alpha3-b": "mao",
+        "alpha3-t": "mri",
+        "alpha2": "mi",
+        "English": "Maori"
+    },
+    {
+        "alpha3-b": "map",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Austronesian languages"
+    },
+    {
+        "alpha3-b": "mar",
+        "alpha3-t": null,
+        "alpha2": "mr",
+        "English": "Marathi"
+    },
+    {
+        "alpha3-b": "mas",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Masai"
+    },
+    {
+        "alpha3-b": "may",
+        "alpha3-t": "msa",
+        "alpha2": "ms",
+        "English": "Malay"
+    },
+    {
+        "alpha3-b": "mdf",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Moksha"
+    },
+    {
+        "alpha3-b": "mdr",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Mandar"
+    },
+    {
+        "alpha3-b": "men",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Mende"
+    },
+    {
+        "alpha3-b": "mic",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Mi'kmaq; Micmac"
+    },
+    {
+        "alpha3-b": "min",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Minangkabau"
+    },
+    {
+        "alpha3-b": "mis",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Uncoded languages"
+    },
+    {
+        "alpha3-b": "mkh",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Mon-Khmer languages"
+    },
+    {
+        "alpha3-b": "mlg",
+        "alpha3-t": null,
+        "alpha2": "mg",
+        "English": "Malagasy"
+    },
+    {
+        "alpha3-b": "mlt",
+        "alpha3-t": null,
+        "alpha2": "mt",
+        "English": "Maltese"
+    },
+    {
+        "alpha3-b": "mnc",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Manchu"
+    },
+    {
+        "alpha3-b": "mni",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Manipuri"
+    },
+    {
+        "alpha3-b": "mno",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Manobo languages"
+    },
+    {
+        "alpha3-b": "moh",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Mohawk"
+    },
+    {
+        "alpha3-b": "mon",
+        "alpha3-t": null,
+        "alpha2": "mn",
+        "English": "Mongolian"
+    },
+    {
+        "alpha3-b": "mos",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Mossi"
+    },
+    {
+        "alpha3-b": "mul",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Multiple languages"
+    },
+    {
+        "alpha3-b": "mun",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Munda languages"
+    },
+    {
+        "alpha3-b": "mus",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Creek"
+    },
+    {
+        "alpha3-b": "mwl",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Mirandese"
+    },
+    {
+        "alpha3-b": "mwr",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Marwari"
+    },
+    {
+        "alpha3-b": "myn",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Mayan languages"
+    },
+    {
+        "alpha3-b": "myv",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Erzya"
+    },
+    {
+        "alpha3-b": "nah",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Nahuatl languages"
+    },
+    {
+        "alpha3-b": "nai",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "North American Indian languages"
+    },
+    {
+        "alpha3-b": "nap",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Neapolitan"
+    },
+    {
+        "alpha3-b": "nau",
+        "alpha3-t": null,
+        "alpha2": "na",
+        "English": "Nauru"
+    },
+    {
+        "alpha3-b": "nav",
+        "alpha3-t": null,
+        "alpha2": "nv",
+        "English": "Navajo; Navaho"
+    },
+    {
+        "alpha3-b": "nbl",
+        "alpha3-t": null,
+        "alpha2": "nr",
+        "English": "Ndebele, South; South Ndebele"
+    },
+    {
+        "alpha3-b": "nde",
+        "alpha3-t": null,
+        "alpha2": "nd",
+        "English": "Ndebele, North; North Ndebele"
+    },
+    {
+        "alpha3-b": "ndo",
+        "alpha3-t": null,
+        "alpha2": "ng",
+        "English": "Ndonga"
+    },
+    {
+        "alpha3-b": "nds",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Low German; Low Saxon; German, Low; Saxon, Low"
+    },
+    {
+        "alpha3-b": "nep",
+        "alpha3-t": null,
+        "alpha2": "ne",
+        "English": "Nepali"
+    },
+    {
+        "alpha3-b": "new",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Nepal Bhasa; Newari"
+    },
+    {
+        "alpha3-b": "nia",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Nias"
+    },
+    {
+        "alpha3-b": "nic",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Niger-Kordofanian languages"
+    },
+    {
+        "alpha3-b": "niu",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Niuean"
+    },
+    {
+        "alpha3-b": "nno",
+        "alpha3-t": null,
+        "alpha2": "nn",
+        "English": "Norwegian Nynorsk; Nynorsk, Norwegian"
+    },
+    {
+        "alpha3-b": "nob",
+        "alpha3-t": null,
+        "alpha2": "nb",
+        "English": "Bokmål, Norwegian; Norwegian Bokmål"
+    },
+    {
+        "alpha3-b": "nog",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Nogai"
+    },
+    {
+        "alpha3-b": "nor",
+        "alpha3-t": null,
+        "alpha2": "no",
+        "English": "Norwegian"
+    },
+    {
+        "alpha3-b": "npi",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Nepali (individual language)"
+    },
+    {
+        "alpha3-b": "nqo",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "N'Ko"
+    },
+    {
+        "alpha3-b": "nso",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Pedi; Sepedi; Northern Sotho"
+    },
+    {
+        "alpha3-b": "nub",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Nubian languages"
+    },
+    {
+        "alpha3-b": "nus",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Nuer"
+    },
+    {
+        "alpha3-b": "nya",
+        "alpha3-t": null,
+        "alpha2": "ny",
+        "English": "Chichewa; Chewa; Nyanja"
+    },
+    {
+        "alpha3-b": "nym",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Nyamwezi"
+    },
+    {
+        "alpha3-b": "nyn",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Nyankole"
+    },
+    {
+        "alpha3-b": "nyo",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Nyoro"
+    },
+    {
+        "alpha3-b": "nzi",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Nzima"
+    },
+    {
+        "alpha3-b": "oci",
+        "alpha3-t": null,
+        "alpha2": "oc",
+        "English": "Occitan; Provençal"
+    },
+    {
+        "alpha3-b": "oji",
+        "alpha3-t": null,
+        "alpha2": "oj",
+        "English": "Ojibwa"
+    },
+    {
+        "alpha3-b": "ori",
+        "alpha3-t": null,
+        "alpha2": "or",
+        "English": "Oriya"
+    },
+    {
+        "alpha3-b": "orm",
+        "alpha3-t": null,
+        "alpha2": "om",
+        "English": "Oromo"
+    },
+    {
+        "alpha3-b": "ory",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Odia"
+    },
+    {
+        "alpha3-b": "osa",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Osage"
+    },
+    {
+        "alpha3-b": "oss",
+        "alpha3-t": null,
+        "alpha2": "os",
+        "English": "Ossetian; Ossetic"
+    },
+    {
+        "alpha3-b": "oto",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Otomian languages"
+    },
+    {
+        "alpha3-b": "paa",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Papuan languages"
+    },
+    {
+        "alpha3-b": "pag",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Pangasinan"
+    },
+    {
+        "alpha3-b": "pal",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Pahlavi"
+    },
+    {
+        "alpha3-b": "pam",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Pampanga; Kapampangan"
+    },
+    {
+        "alpha3-b": "pan",
+        "alpha3-t": null,
+        "alpha2": "pa",
+        "English": "Panjabi; Punjabi"
+    },
+    {
+        "alpha3-b": "pap",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Papiamento"
+    },
+    {
+        "alpha3-b": "pau",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Palauan"
+    },
+    {
+        "alpha3-b": "pbt",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Southern Pashto"
+    },
+    {
+        "alpha3-b": "per",
+        "alpha3-t": "fas",
+        "alpha2": "fa",
+        "English": "Persian"
+    },
+    {
+        "alpha3-b": "pes",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Iranian Persian"
+    },
+    {
+        "alpha3-b": "phi",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Philippine languages"
+    },
+    {
+        "alpha3-b": "phn",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Phoenician"
+    },
+    {
+        "alpha3-b": "pli",
+        "alpha3-t": null,
+        "alpha2": "pi",
+        "English": "Pali"
+    },
+    {
+        "alpha3-b": "plt",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Plateau Malagasy"
+    },
+    {
+        "alpha3-b": "pol",
+        "alpha3-t": null,
+        "alpha2": "pl",
+        "English": "Polish"
+    },
+    {
+        "alpha3-b": "pon",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Pohnpeian"
+    },
+    {
+        "alpha3-b": "por",
+        "alpha3-t": null,
+        "alpha2": "pt",
+        "English": "Portuguese"
+    },
+    {
+        "alpha3-b": "pra",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Prakrit languages"
+    },
+    {
+        "alpha3-b": "prs",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Dari, Afghan Persian"
+    },
+    {
+        "alpha3-b": "pus",
+        "alpha3-t": null,
+        "alpha2": "ps",
+        "English": "Pushto; Pashto"
+    },
+    {
+        "alpha3-b": "qaa-qtz",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Reserved for local use"
+    },
+    {
+        "alpha3-b": "que",
+        "alpha3-t": null,
+        "alpha2": "qu",
+        "English": "Quechua"
+    },
+    {
+        "alpha3-b": "quy",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Ayacucho Quechua"
+    },
+    {
+        "alpha3-b": "raj",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Rajasthani"
+    },
+    {
+        "alpha3-b": "rap",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Rapanui"
+    },
+    {
+        "alpha3-b": "rar",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Rarotongan; Cook Islands Maori"
+    },
+    {
+        "alpha3-b": "roa",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Romance languages"
+    },
+    {
+        "alpha3-b": "roh",
+        "alpha3-t": null,
+        "alpha2": "rm",
+        "English": "Romansh"
+    },
+    {
+        "alpha3-b": "rom",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Romany"
+    },
+    {
+        "alpha3-b": "rum",
+        "alpha3-t": "ron",
+        "alpha2": "ro",
+        "English": "Romanian; Moldavian; Moldovan"
+    },
+    {
+        "alpha3-b": "run",
+        "alpha3-t": null,
+        "alpha2": "rn",
+        "English": "Rundi"
+    },
+    {
+        "alpha3-b": "rup",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Aromanian; Arumanian; Macedo-Romanian"
+    },
+    {
+        "alpha3-b": "rus",
+        "alpha3-t": null,
+        "alpha2": "ru",
+        "English": "Russian"
+    },
+    {
+        "alpha3-b": "sad",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Sandawe"
+    },
+    {
+        "alpha3-b": "sag",
+        "alpha3-t": null,
+        "alpha2": "sg",
+        "English": "Sango"
+    },
+    {
+        "alpha3-b": "sah",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Yakut"
+    },
+    {
+        "alpha3-b": "sai",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "South American Indian (Other)"
+    },
+    {
+        "alpha3-b": "sal",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Salishan languages"
+    },
+    {
+        "alpha3-b": "sam",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Samaritan Aramaic"
+    },
+    {
+        "alpha3-b": "san",
+        "alpha3-t": null,
+        "alpha2": "sa",
+        "English": "Sanskrit"
+    },
+    {
+        "alpha3-b": "sas",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Sasak"
+    },
+    {
+        "alpha3-b": "sat",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Santali"
+    },
+    {
+        "alpha3-b": "scn",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Sicilian"
+    },
+    {
+        "alpha3-b": "sco",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Scots"
+    },
+    {
+        "alpha3-b": "sel",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Selkup"
+    },
+    {
+        "alpha3-b": "sem",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Semitic languages"
+    },
+    {
+        "alpha3-b": "sgn",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Sign Languages"
+    },
+    {
+        "alpha3-b": "shn",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Shan"
+    },
+    {
+        "alpha3-b": "sid",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Sidamo"
+    },
+    {
+        "alpha3-b": "sin",
+        "alpha3-t": null,
+        "alpha2": "si",
+        "English": "Sinhala; Sinhalese"
+    },
+    {
+        "alpha3-b": "sio",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Siouan languages"
+    },
+    {
+        "alpha3-b": "sit",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Sino-Tibetan languages"
+    },
+    {
+        "alpha3-b": "sla",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Slavic languages"
+    },
+    {
+        "alpha3-b": "slo",
+        "alpha3-t": "slk",
+        "alpha2": "sk",
+        "English": "Slovak"
+    },
+    {
+        "alpha3-b": "slv",
+        "alpha3-t": null,
+        "alpha2": "sl",
+        "English": "Slovenian"
+    },
+    {
+        "alpha3-b": "sma",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Southern Sami"
+    },
+    {
+        "alpha3-b": "sme",
+        "alpha3-t": null,
+        "alpha2": "se",
+        "English": "Northern Sami"
+    },
+    {
+        "alpha3-b": "smi",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Sami languages"
+    },
+    {
+        "alpha3-b": "smj",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Lule Sami"
+    },
+    {
+        "alpha3-b": "smn",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Inari Sami"
+    },
+    {
+        "alpha3-b": "smo",
+        "alpha3-t": null,
+        "alpha2": "sm",
+        "English": "Samoan"
+    },
+    {
+        "alpha3-b": "sms",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Skolt Sami"
+    },
+    {
+        "alpha3-b": "sna",
+        "alpha3-t": null,
+        "alpha2": "sn",
+        "English": "Shona"
+    },
+    {
+        "alpha3-b": "snd",
+        "alpha3-t": null,
+        "alpha2": "sd",
+        "English": "Sindhi"
+    },
+    {
+        "alpha3-b": "snk",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Soninke"
+    },
+    {
+        "alpha3-b": "sog",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Sogdian"
+    },
+    {
+        "alpha3-b": "som",
+        "alpha3-t": null,
+        "alpha2": "so",
+        "English": "Somali"
+    },
+    {
+        "alpha3-b": "son",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Songhai languages"
+    },
+    {
+        "alpha3-b": "sot",
+        "alpha3-t": null,
+        "alpha2": "st",
+        "English": "Sotho, Southern"
+    },
+    {
+        "alpha3-b": "spa",
+        "alpha3-t": null,
+        "alpha2": "es",
+        "English": "Spanish; Castilian"
+    },
+    {
+        "alpha3-b": "srd",
+        "alpha3-t": null,
+        "alpha2": "sc",
+        "English": "Sardinian"
+    },
+    {
+        "alpha3-b": "srn",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Sranan Tongo"
+    },
+    {
+        "alpha3-b": "srp",
+        "alpha3-t": null,
+        "alpha2": "sr",
+        "English": "Serbian"
+    },
+    {
+        "alpha3-b": "srr",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Serer"
+    },
+    {
+        "alpha3-b": "ssa",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Nilo-Saharan languages"
+    },
+    {
+        "alpha3-b": "ssw",
+        "alpha3-t": null,
+        "alpha2": "ss",
+        "English": "Swati"
+    },
+    {
+        "alpha3-b": "suk",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Sukuma"
+    },
+    {
+        "alpha3-b": "sun",
+        "alpha3-t": null,
+        "alpha2": "su",
+        "English": "Sundanese"
+    },
+    {
+        "alpha3-b": "sus",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Susu"
+    },
+    {
+        "alpha3-b": "sux",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Sumerian"
+    },
+    {
+        "alpha3-b": "swa",
+        "alpha3-t": null,
+        "alpha2": "sw",
+        "English": "Swahili"
+    },
+    {
+        "alpha3-b": "swe",
+        "alpha3-t": null,
+        "alpha2": "sv",
+        "English": "Swedish"
+    },
+    {
+        "alpha3-b": "swh",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Swahili (individual language)"
+    },
+    {
+        "alpha3-b": "syc",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Classical Syriac"
+    },
+    {
+        "alpha3-b": "syr",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Syriac"
+    },
+    {
+        "alpha3-b": "szl",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Silesian"
+    },
+    {
+        "alpha3-b": "tah",
+        "alpha3-t": null,
+        "alpha2": "ty",
+        "English": "Tahitian"
+    },
+    {
+        "alpha3-b": "tai",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Tai languages"
+    },
+    {
+        "alpha3-b": "tam",
+        "alpha3-t": null,
+        "alpha2": "ta",
+        "English": "Tamil"
+    },
+    {
+        "alpha3-b": "tat",
+        "alpha3-t": null,
+        "alpha2": "tt",
+        "English": "Tatar"
+    },
+    {
+        "alpha3-b": "taq",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Tamasheq"
+    },
+    {
+        "alpha3-b": "tel",
+        "alpha3-t": null,
+        "alpha2": "te",
+        "English": "Telugu"
+    },
+    {
+        "alpha3-b": "tem",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Timne"
+    },
+    {
+        "alpha3-b": "ter",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Tereno"
+    },
+    {
+        "alpha3-b": "tet",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Tetum"
+    },
+    {
+        "alpha3-b": "tgk",
+        "alpha3-t": null,
+        "alpha2": "tg",
+        "English": "Tajik"
+    },
+    {
+        "alpha3-b": "tgl",
+        "alpha3-t": null,
+        "alpha2": "tl",
+        "English": "Tagalog"
+    },
+    {
+        "alpha3-b": "tha",
+        "alpha3-t": null,
+        "alpha2": "th",
+        "English": "Thai"
+    },
+    {
+        "alpha3-b": "tib",
+        "alpha3-t": "bod",
+        "alpha2": "bo",
+        "English": "Tibetan"
+    },
+    {
+        "alpha3-b": "tig",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Tigre"
+    },
+    {
+        "alpha3-b": "tir",
+        "alpha3-t": null,
+        "alpha2": "ti",
+        "English": "Tigrinya"
+    },
+    {
+        "alpha3-b": "tiv",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Tiv"
+    },
+    {
+        "alpha3-b": "tkl",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Tokelau"
+    },
+    {
+        "alpha3-b": "tlh",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Klingon; tlhIngan-Hol"
+    },
+    {
+        "alpha3-b": "tli",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Tlingit"
+    },
+    {
+        "alpha3-b": "tmh",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Tamashek"
+    },
+    {
+        "alpha3-b": "tog",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Tonga (Nyasa)"
+    },
+    {
+        "alpha3-b": "ton",
+        "alpha3-t": null,
+        "alpha2": "to",
+        "English": "Tonga (Tonga Islands)"
+    },
+    {
+        "alpha3-b": "tpi",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Tok Pisin"
+    },
+    {
+        "alpha3-b": "tsi",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Tsimshian"
+    },
+    {
+        "alpha3-b": "tsn",
+        "alpha3-t": null,
+        "alpha2": "tn",
+        "English": "Tswana"
+    },
+    {
+        "alpha3-b": "tso",
+        "alpha3-t": null,
+        "alpha2": "ts",
+        "English": "Tsonga"
+    },
+    {
+        "alpha3-b": "tuk",
+        "alpha3-t": null,
+        "alpha2": "tk",
+        "English": "Turkmen"
+    },
+    {
+        "alpha3-b": "tum",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Tumbuka"
+    },
+    {
+        "alpha3-b": "tup",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Tupi languages"
+    },
+    {
+        "alpha3-b": "tur",
+        "alpha3-t": null,
+        "alpha2": "tr",
+        "English": "Turkish"
+    },
+    {
+        "alpha3-b": "tut",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Altaic languages"
+    },
+    {
+        "alpha3-b": "tvl",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Tuvalu"
+    },
+    {
+        "alpha3-b": "twi",
+        "alpha3-t": null,
+        "alpha2": "tw",
+        "English": "Twi"
+    },
+    {
+        "alpha3-b": "tyv",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Tuvinian"
+    },
+    {
+        "alpha3-b": "tzm",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Central Atlas Tamazight"
+    },
+    {
+        "alpha3-b": "udm",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Udmurt"
+    },
+    {
+        "alpha3-b": "uga",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Ugaritic"
+    },
+    {
+        "alpha3-b": "uig",
+        "alpha3-t": null,
+        "alpha2": "ug",
+        "English": "Uighur; Uyghur"
+    },
+    {
+        "alpha3-b": "ukr",
+        "alpha3-t": null,
+        "alpha2": "uk",
+        "English": "Ukrainian"
+    },
+    {
+        "alpha3-b": "umb",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Umbundu"
+    },
+    {
+        "alpha3-b": "und",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Undetermined"
+    },
+    {
+        "alpha3-b": "urd",
+        "alpha3-t": null,
+        "alpha2": "ur",
+        "English": "Urdu"
+    },
+    {
+        "alpha3-b": "uzb",
+        "alpha3-t": null,
+        "alpha2": "uz",
+        "English": "Uzbek"
+    },
+    {
+        "alpha3-b": "uzn",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Northern Uzbek"
+    },
+    {
+        "alpha3-b": "vai",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Vai"
+    },
+    {
+        "alpha3-b": "vec",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Venetian"
+    },
+    {
+        "alpha3-b": "ven",
+        "alpha3-t": null,
+        "alpha2": "ve",
+        "English": "Venda"
+    },
+    {
+        "alpha3-b": "vie",
+        "alpha3-t": null,
+        "alpha2": "vi",
+        "English": "Vietnamese"
+    },
+    {
+        "alpha3-b": "vol",
+        "alpha3-t": null,
+        "alpha2": "vo",
+        "English": "Volapük"
+    },
+    {
+        "alpha3-b": "vot",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Votic"
+    },
+    {
+        "alpha3-b": "wak",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Wakashan languages"
+    },
+    {
+        "alpha3-b": "wal",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Walamo"
+    },
+    {
+        "alpha3-b": "war",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Waray"
+    },
+    {
+        "alpha3-b": "was",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Washo"
+    },
+    {
+        "alpha3-b": "wel",
+        "alpha3-t": "cym",
+        "alpha2": "cy",
+        "English": "Welsh"
+    },
+    {
+        "alpha3-b": "wen",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Sorbian languages"
+    },
+    {
+        "alpha3-b": "wln",
+        "alpha3-t": null,
+        "alpha2": "wa",
+        "English": "Walloon"
+    },
+    {
+        "alpha3-b": "wol",
+        "alpha3-t": null,
+        "alpha2": "wo",
+        "English": "Wolof"
+    },
+    {
+        "alpha3-b": "xal",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Kalmyk; Oirat"
+    },
+    {
+        "alpha3-b": "xho",
+        "alpha3-t": null,
+        "alpha2": "xh",
+        "English": "Xhosa"
+    },
+    {
+        "alpha3-b": "yao",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Yao"
+    },
+    {
+        "alpha3-b": "yap",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Yapese"
+    },
+    {
+        "alpha3-b": "ydd",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Eastern Yiddish"
+    },
+    {
+        "alpha3-b": "yid",
+        "alpha3-t": null,
+        "alpha2": "yi",
+        "English": "Yiddish"
+    },
+    {
+        "alpha3-b": "yor",
+        "alpha3-t": null,
+        "alpha2": "yo",
+        "English": "Yoruba"
+    },
+    {
+        "alpha3-b": "ypk",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Yupik languages"
+    },
+    {
+        "alpha3-b": "yue",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Yue Chinese"
+    },
+    {
+        "alpha3-b": "zap",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Zapotec"
+    },
+    {
+        "alpha3-b": "zbl",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Blissymbols; Blissymbolics; Bliss"
+    },
+    {
+        "alpha3-b": "zen",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Zenaga"
+    },
+    {
+        "alpha3-b": "zgh",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Standard Moroccan Tamazight"
+    },
+    {
+        "alpha3-b": "zha",
+        "alpha3-t": null,
+        "alpha2": "za",
+        "English": "Zhuang; Chuang"
+    },
+    {
+        "alpha3-b": "znd",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Zande languages"
+    },
+    {
+        "alpha3-b": "zsm",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Standard Malay"
+    },
+    {
+        "alpha3-b": "zul",
+        "alpha3-t": null,
+        "alpha2": "zu",
+        "English": "Zulu"
+    },
+    {
+        "alpha3-b": "zun",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Zuni"
+    },
+    {
+        "alpha3-b": "zza",
+        "alpha3-t": null,
+        "alpha2": null,
+        "English": "Zaza; Dimili; Dimli; Kirdki; Kirmanjki; Zazaki"
+    }
+]

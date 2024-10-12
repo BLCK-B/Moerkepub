@@ -84,3 +84,14 @@ def test_find_suggestions_more_matches():
 
     assert len(suggestions) == 3
 
+
+def test_find_suggestions_model_key():
+    result = language_codes.__find_suggestions__('ger', json_all_codes, True)
+
+    assert (result == 'ger_Latn')
+
+
+def test_find_suggestions_no_match_model_key_returns_empty():
+    result = language_codes.__find_suggestions__('no-match', json_all_codes, True)
+
+    assert not result
