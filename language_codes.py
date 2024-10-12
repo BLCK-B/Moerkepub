@@ -50,7 +50,8 @@ def __find_suggestions__(user_input, json_mapped, modelKeyOnly=False):
         if (lang['alpha2'] and lang['alpha2'].lower().startswith(user_input)) or \
                 (lang['alpha3-b'] and lang['alpha3-b'].lower().startswith(user_input)) or \
                 (lang['alpha3-t'] and lang['alpha3-t'].lower().startswith(user_input)) or \
-                (lang['English'] and lang['English'].lower().startswith(user_input)):
+                (lang['English'] and lang['English'].lower().startswith(user_input)) or \
+                (lang['model-key'] and lang['model-key'].lower().startswith(user_input)):
 
             code_parts = []
             if modelKeyOnly:
@@ -80,6 +81,8 @@ def search(json_mapped, message):
                 else:
                     print("\nSpecify a single language.")
                     continue
+            elif event.name == 'space':
+                user_input += ' '
             elif len(event.name) == 1:
                 user_input += event.name
 
