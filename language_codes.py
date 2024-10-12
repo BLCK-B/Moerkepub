@@ -41,7 +41,7 @@ def map_languages(model_langs, json_path):
     return mapped_json
 
 
-def __find_suggestions__(user_input, json_mapped):
+def __find_suggestions__(user_input, json_mapped, modelKeyOnly=False):
     user_input = user_input.lower()
     suggestions = []
     json_values = json_mapped.values() if isinstance(json_mapped, dict) else json_mapped
@@ -53,6 +53,8 @@ def __find_suggestions__(user_input, json_mapped):
                 (lang['English'] and lang['English'].lower().startswith(user_input)):
 
             code_parts = []
+            if modelKeyOnly:
+                return lang.get("model-key")
             for field in lang.values():
                 if field:
                     code_parts.append(field)
@@ -74,7 +76,7 @@ def search(json_mapped, message):
                 user_input = user_input[:-1]
             elif event.name == 'enter':
                 if len(prev_suggestions) == 1:
-                    return __find_suggestions__(user_input, json_mapped)
+                    return __find_suggestions__(user_input, json_mapped, True)
                 else:
                     print("\nSpecify a single language.")
                     continue

@@ -76,24 +76,24 @@ def main():
             input_file = input_file.replace('\"', '')
             _, extension = os.path.splitext(input_file)
             extension = extension.lower()
-            if extension == '':
+            if extension != '.epub' and extension != '.txt':
                 print(f"Wrong input", extension)
                 continue
-            os.system('cls')
 
-            print("Loading model...")
-            translator = translations('NLLB200', 'cuda', 'eng') # todo: set target lang
-            os.system('cls')
-
+            translator = translations('NLLB200')
             model_langs = translator.get_language_codes()
             mapped_langs = language_codes.map_languages(model_langs, json_codes_path)
-            os.system('cls')
+            # os.system('cls||clear') TODO: fill missing codes
 
             source_lang = language_codes.search(mapped_langs, 'Select source language.')
             os.system('cls||clear')
             target_lang = language_codes.search(mapped_langs, f'Source: {source_lang}. Select target language.')
             os.system('cls||clear')
-            translator.set_target_lang(target_lang) # todo: get model key
+
+            print("Loading model...")
+            translator.instantiate_model('cuda', source_lang, target_lang)
+            os.system('cls')
+
             match extension:
                 case '.epub':
                     process_epub(translator, input_file, bilingual=(choice == '3'))
