@@ -1,9 +1,10 @@
 import language_codes
 import settings_screen
 import text_processor
-import persistence
 import os
+import persistence
 from translations import translations
+from colorama import Fore, Style
 
 output_path = r"sideTesting/output/exportBook.epub"
 temp_path = r"sideTesting/extracted.epub"
@@ -11,8 +12,12 @@ json_codes_path = r"language_codes.json"
 
 
 def main():
+    json_settings = persistence.load()
     os.system('cls||clear')
     while True:
+        if json_settings.get('selected_hw') == "cpu":
+            print(Fore.RED + "CPU selected - very slow!\n" + Style.RESET_ALL)
+
         print("1. Settings")
         print("2. Translate")
         print("3. Translate bilingual")
@@ -37,7 +42,8 @@ def main():
                 print(f"Wrong input", extension)
                 continue
 
-            translator = translations('NLLB200')
+            json_settings = persistence.load()
+            translator = translations(json_settings.get('selected_model'))
             model_langs = translator.get_language_codes()
             mapped_langs = language_codes.map_languages(model_langs, json_codes_path)
 
@@ -47,7 +53,7 @@ def main():
             os.system('cls||clear')
 
             print("Loading model...")
-            translator.instantiate_model('cuda', source_lang, target_lang)
+            translator.instantiate_model(json_settings.get('selected_hw'), source_lang, target_lang)
             os.system('cls||clear')
 
             match extension:

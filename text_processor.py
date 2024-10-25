@@ -56,7 +56,8 @@ def process_book_files(translator, html_objects, temp_path, output_path, bilingu
             epub_utils.write_html(obj.get('html_name'), processed_soup)
             processed_sentences += len(obj.get('sentence_list'))
             bar.goto(processed_sentences)
-            os.system('cls||clear')
+            if processed_sentences < total_sentences:
+                os.system('cls||clear')
 
     epub_utils.recreate_epub(temp_path, output_path)
 
