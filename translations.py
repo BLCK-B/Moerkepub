@@ -1,7 +1,7 @@
 from progress.bar import IncrementalBar
 import os
 
-from models import model_NLLB200
+from models import model_NLLB200, model_small100
 
 
 class translations:
@@ -13,6 +13,9 @@ class translations:
     def instantiate_model(self, hw, source_lang, target_lang):
         if self.model_name == "NLLB200":
             from models.model_NLLB200 import Model
+            self.model = Model(hw, source_lang, target_lang)
+        elif self.model_name == "small100":
+            from models.model_small100 import Model
             self.model = Model(hw, source_lang, target_lang)
         else:
             raise Exception("Model not found")
@@ -26,10 +29,7 @@ class translations:
                 chunk_translated = self.model.batch_process(chunk)
 
                 for num in range(min(batch_size, len(chunk_translated))):
-                    if len(chunk_translated[num]) < 5 * len(chunk[num]):
-                        translated.append(chunk_translated[num])
-                    else:
-                        translated.append(chunk[num])
+                    translated.append(chunk_translated[num])
 
                 bar.goto(min(len(group), i + batch_size))
         return translated
@@ -37,3 +37,5 @@ class translations:
     def get_language_codes(self):
         if self.model_name == "NLLB200":
             return model_NLLB200.get_language_codes()
+        elif self.model_name == "small100":
+            return model_small100.get_language_codes()

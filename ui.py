@@ -27,8 +27,36 @@ def main():
         os.system('cls||clear')
 
         if choice == 'd':
+            input_file = r"C:\MyFilesDontDelete\project\EbookTranslate\sideTesting\diary.epub"
+            input_file = input_file.replace('\"', '')
+            _, extension = os.path.splitext(input_file)
+            extension = extension.lower()
+            if extension != '.epub' and extension != '.txt':
+                print(f"Wrong input", extension)
+                continue
+
             json_settings = persistence.load()
-            print(json_settings.get('selected_model'), json_settings.get('selected_hw'))
+            translator = translations(json_settings.get('selected_model'))
+            model_langs = translator.get_language_codes()
+            mapped_langs = language_codes.map_languages(model_langs, json_codes_path)
+
+            source_lang = language_codes.search(mapped_langs, 'Select source language.')
+            os.system('cls||clear')
+            target_lang = language_codes.search(mapped_langs, f'Source: {source_lang}. Select target language.')
+            os.system('cls||clear')
+
+            print("Loading model...")
+            translator.instantiate_model(json_settings.get('selected_hw'), source_lang, target_lang)
+            os.system('cls||clear')
+
+            match extension:
+                case '.epub':
+                    process_epub(translator, input_file, bilingual=(choice == '3'))
+                case '.txt':
+                    print(f"Processing TXT file")
+                case _:
+                    print(f"Unsupported file type: ", extension)
+                    continue
 
         elif choice == '1':
             json_settings = settings_screen.show()

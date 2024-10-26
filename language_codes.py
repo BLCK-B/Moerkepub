@@ -6,6 +6,8 @@ import sys
 import keyboard
 
 
+# https://iso639-3.sil.org/code_tables/639/data
+
 def __find_by_code__(search_code, json_all_codes):
     if isinstance(search_code, list):
         search_code = str(search_code[0])
