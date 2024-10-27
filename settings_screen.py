@@ -26,9 +26,16 @@ def show():
             return persistence.load()
 
         elif choice == '1':
+            models_exist = check_models_downloaded()
             print("0. back")
-            print("1. NLLB200")
-            print("2. small100")
+            if models_exist['NLLB200']:
+                print("1. NLLB200")
+            else:
+                print("1. NLLB200 - not downloaded")
+            if models_exist['small100']:
+                print("2. small100")
+            else:
+                print("2. small100 - not downloaded")
             choice = input("Select: ")
             if choice == '1':
                 persistence.set(json_settings, 'selected_model', 'NLLB200')
@@ -59,3 +66,10 @@ def detect_gpu():
         print("No CUDA GPU detected.")
         print('---------------\n')
         return False
+
+
+def check_models_downloaded():
+    models_exist = dict()
+    models_exist['small100'] = os.path.isfile(r'models/downloaded/nllb-ctranslate-int8/model.bin')
+    models_exist['NLLB200'] = os.path.isfile(r'models/downloaded/small100-quantized/model.safetensors')
+    return models_exist
