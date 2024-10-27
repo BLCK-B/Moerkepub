@@ -8,26 +8,26 @@ def show():
     while True:
         os.system('cls||clear')
         json_settings = persistence.load()
-        print('selected model:', json_settings['selected_model'])
-        print('selected hardware:', json_settings['selected_hw'])
+        model_name = json_settings['selected_model']
+        print(f'1. Select translation model [ {model_name} ]')
+        if json_settings.get('selected_hw') == 'cuda':
+            print('2. Select hardware [cuda]')
+        else:
+            print(f'2. Select hardware [{Fore.RED} CPU - very slow! {Style.RESET_ALL}]')
+        print()
         gpu_available = detect_gpu()
 
         if not gpu_available and json_settings['selected_hw'] == 'cuda':
             persistence.set(json_settings, 'selected_hw', 'cpu')
             json_settings = persistence.load()
 
-        print("0. Back")
-        print("1. Select translation model")
-        print("2. Select hardware")
-        choice = input("Select: ")
+        choice = input('\n')
         os.system('cls||clear')
 
-        if choice == '0':
-            return persistence.load()
-
-        elif choice == '1':
+        if choice == '1':
+            print(f'Select translation model [ {model_name} ]')
+            print()
             models_exist = check_models_downloaded()
-            print("0. back")
             if models_exist['NLLB200']:
                 print("1. NLLB200")
             else:
@@ -36,36 +36,44 @@ def show():
                 print("2. small100")
             else:
                 print("2. small100 - not downloaded")
-            choice = input("Select: ")
+            choice = input('\n')
             if choice == '1':
                 persistence.set(json_settings, 'selected_model', 'NLLB200')
             elif choice == '2':
                 persistence.set(json_settings, 'selected_model', 'small100')
 
         elif choice == '2':
-            print("0. back")
+            if json_settings.get('selected_hw') == 'cuda':
+                print('Select hardware [cuda]')
+            else:
+                print(f'Select hardware [{Fore.RED} CPU - very slow! {Style.RESET_ALL}]')
+            print()
             print("1. cuda GPU") if gpu_available else print(Fore.RED + "1. no cuda GPU detected" + Style.RESET_ALL)
             print("2. CPU")
-            choice = input("Select: ")
+            print()
+            print_gpu()
+            choice = input('\n')
             if choice == '1' and gpu_available:
                 persistence.set(json_settings, 'selected_hw', 'cuda')
             elif choice == '2':
                 persistence.set(json_settings, 'selected_hw', 'cpu')
+        else:
+            return
 
 
 def detect_gpu():
     # todo: check without driver
     # todo: specify number
+    return torch.cuda.is_available()
+
+
+def print_gpu():
     if torch.cuda.is_available():
         print("CUDA is available:")
         for i in range(torch.cuda.device_count()):
             print(f"GPU {i}: {torch.cuda.get_device_name(i)}")
-        print('---------------\n')
-        return True
     else:
         print("No CUDA GPU detected.")
-        print('---------------\n')
-        return False
 
 
 def check_models_downloaded():

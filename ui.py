@@ -12,18 +12,21 @@ json_codes_path = r"language_codes.json"
 
 
 def main():
-    json_settings = persistence.load()
     os.system('cls||clear')
     while True:
-        if json_settings.get('selected_hw') == "cpu":
-            print(Fore.RED + "CPU selected - very slow!\n" + Style.RESET_ALL)
-
+        json_settings = persistence.load()
         print("1. Settings")
         print("2. Translate")
-        print("3. Translate bilingual")
+        print("3. Translate - bilingual")
         print("4. Exit")
+        print()
+        print('selected model:', json_settings['selected_model'])
+        if json_settings.get('selected_hw') == "cuda":
+            print('selected hardware: cuda')
+        else:
+            print(Fore.RED + "selected hardware: CPU - very slow!\n" + Style.RESET_ALL)
 
-        choice = input("Select 1-3: ")
+        choice = input('\n')
         os.system('cls||clear')
 
         if choice == 'd':
@@ -59,7 +62,7 @@ def main():
                     continue
 
         elif choice == '1':
-            json_settings = settings_screen.show()
+            settings_screen.show()
 
         elif choice == '2' or choice == '3':
             input_file = input("Drag and drop EPUB | TXT file.\n\n")
