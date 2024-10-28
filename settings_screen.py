@@ -1,4 +1,6 @@
 import os
+
+import model_download
 import persistence
 import torch
 from colorama import Fore, Style
@@ -31,16 +33,24 @@ def show():
             if models_exist['NLLB200']:
                 print("1. NLLB200")
             else:
-                print("1. NLLB200 - not downloaded")
+                print(Fore.YELLOW + "1. NLLB200 - available for download - 1.3 GB" + Style.RESET_ALL)
             if models_exist['small100']:
                 print("2. small100")
             else:
-                print("2. small100 - not downloaded")
+                print(Fore.YELLOW + "2. small100 - available for download - 600 MB" + Style.RESET_ALL)
             choice = input('\n')
             if choice == '1':
-                persistence.set(json_settings, 'selected_model', 'NLLB200')
+                if models_exist['NLLB200']:
+                    persistence.set(json_settings, 'selected_model', 'NLLB200')
+                else:
+                    if input("download NLLB200? [y]\n") == 'y':
+                        model_download.download('NLLB200')
             elif choice == '2':
-                persistence.set(json_settings, 'selected_model', 'small100')
+                if models_exist['small100']:
+                    persistence.set(json_settings, 'selected_model', 'small100')
+                else:
+                    if input("download small100? [y]\n") == 'y':
+                        model_download.download('small100')
 
         elif choice == '2':
             if json_settings.get('selected_hw') == 'cuda':
@@ -48,7 +58,7 @@ def show():
             else:
                 print(f'Select hardware [{Fore.RED} CPU - very slow! {Style.RESET_ALL}]')
             print()
-            print("1. cuda GPU") if gpu_available else print(Fore.RED + "1. no cuda GPU detected" + Style.RESET_ALL)
+            print("1. cuda GPU") if gpu_available else print(Fore.YELLOW + "-. no cuda GPU detected" + Style.RESET_ALL)
             print("2. CPU")
             print()
             print_gpu()
@@ -78,6 +88,6 @@ def print_gpu():
 
 def check_models_downloaded():
     models_exist = dict()
-    models_exist['small100'] = os.path.isfile(r'models/downloaded/nllb-ctranslate-int8/model.bin')
-    models_exist['NLLB200'] = os.path.isfile(r'models/downloaded/small100-quantized/model.safetensors')
+    models_exist['NLLB200'] = os.path.isfile(r'models/downloaded/nllb-ctranslate-int8/model.bin')
+    models_exist['small100'] = os.path.isfile(r'models/downloaded/small100-quantized/model.safetensors')
     return models_exist

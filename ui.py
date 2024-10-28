@@ -15,6 +15,7 @@ def main():
     os.system('cls||clear')
     while True:
         json_settings = persistence.load()
+        print('--- Ebook translator ---')
         print("1. Settings")
         print("2. Translate")
         print("3. Translate - bilingual")
@@ -30,41 +31,15 @@ def main():
         os.system('cls||clear')
 
         if choice == 'd':
-            input_file = r"C:\MyFilesDontDelete\project\EbookTranslate\sideTesting\diary.epub"
-            input_file = input_file.replace('\"', '')
-            _, extension = os.path.splitext(input_file)
-            extension = extension.lower()
-            if extension != '.epub' and extension != '.txt':
-                print(f"Wrong input", extension)
-                continue
-
-            json_settings = persistence.load()
-            translator = translations(json_settings.get('selected_model'))
-            model_langs = translator.get_language_codes()
-            mapped_langs = language_codes.map_languages(model_langs, json_codes_path)
-
-            source_lang = language_codes.search(mapped_langs, 'Select source language.')
-            os.system('cls||clear')
-            target_lang = language_codes.search(mapped_langs, f'Source: {source_lang}. Select target language.')
-            os.system('cls||clear')
-
-            print("Loading model...")
-            translator.instantiate_model(json_settings.get('selected_hw'), source_lang, target_lang)
-            os.system('cls||clear')
-
-            match extension:
-                case '.epub':
-                    process_epub(translator, input_file, bilingual=(choice == '3'))
-                case '.txt':
-                    print(f"Processing TXT file")
-                case _:
-                    print(f"Unsupported file type: ", extension)
-                    continue
+            print('nothing')
 
         elif choice == '1':
             settings_screen.show()
 
         elif choice == '2' or choice == '3':
+            if json_settings['selected_model'] == "none":
+                input('select a model first')
+                continue
             input_file = input("Drag and drop EPUB | TXT file.\n\n")
             input_file = input_file.replace('\"', '')
             _, extension = os.path.splitext(input_file)
@@ -78,9 +53,10 @@ def main():
             model_langs = translator.get_language_codes()
             mapped_langs = language_codes.map_languages(model_langs, json_codes_path)
 
-            source_lang = language_codes.search(mapped_langs, 'Select source language.')
+            source_lang = language_codes.search(mapped_langs, 'Select source language (start typing):')
             os.system('cls||clear')
-            target_lang = language_codes.search(mapped_langs, f'Source: {source_lang}. Select target language.')
+            target_lang = language_codes.search(mapped_langs, f'Source: {source_lang}. Select target language (start '
+                                                              f'typing):')
             os.system('cls||clear')
 
             print("Loading model...")
@@ -92,9 +68,6 @@ def main():
                     process_epub(translator, input_file, bilingual=(choice == '3'))
                 case '.txt':
                     print(f"Processing TXT file")
-                case _:
-                    print(f"Unsupported file type: ", extension)
-                    continue
 
         elif choice == '4':
             print("Ebook translator exited.")
@@ -104,17 +77,18 @@ def main():
 def process_epub(translator, input_file, bilingual):
     html_objects = text_processor.book_init(input_file, temp_path, output_path)
 
-    confirm = None
-    while confirm not in ['y', 'n']:
+    while True:
         confirm = input("\nConfirm translate y/n: ").strip().lower()
-        os.system('cls||clear')
+        if confirm.lower() == 'y':
+            text_processor.process_book_files(translator, html_objects, temp_path, output_path, bilingual)
+            input(f'\nBook translated!')
+            os.system('cls||clear')
+            return
+        elif confirm.lower() == 'n':
+            input("Translation canceled.")
+            return
 
-    if confirm.lower() == 'y':
-        text_processor.process_book_files(translator, html_objects, temp_path, output_path, bilingual)
-        input(f'\nBook translated!')
-        os.system('cls||clear')
-    else:
-        input("Translation canceled.")
+        # os.system('cls||clear')
 
 
 main()
