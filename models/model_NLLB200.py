@@ -1,6 +1,8 @@
 import ctranslate2
 import transformers
 
+import persistence
+
 beam_size = 8
 
 
@@ -19,10 +21,10 @@ class Model:
         print("selected: ", source_lang, target_lang)
         self.target_lang = target_lang
         if hw == "cuda":
-            self.model = ctranslate2.Translator("models/downloaded/nllb-ctranslate-int8", hw)
+            self.model = ctranslate2.Translator(str(persistence.get_appdata_path() / 'models' / 'nllb-ctranslate-int8'), hw)
             self.device_index = 1
         elif hw == "cpu":
-            self.model = ctranslate2.Translator("models/downloaded/nllb-ctranslate-int8", hw)
+            self.model = ctranslate2.Translator(str(persistence.get_appdata_path() / 'models' / 'nllb-ctranslate-int8'), hw)
         else:
             raise ValueError("Device must be 'cuda' or 'cpu'")
         self.tokenizer = transformers.AutoTokenizer.from_pretrained("facebook/nllb-200-distilled-1.3B",

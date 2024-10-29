@@ -29,7 +29,7 @@ def show():
         if choice == '1':
             print(f'Select translation model [ {model_name} ]')
             print()
-            models_exist = check_models_downloaded()
+            models_exist = model_download.check_models_downloaded()
             if models_exist['NLLB200']:
                 print("1. NLLB200")
             else:
@@ -84,10 +84,3 @@ def print_gpu():
             print(f"GPU {i}: {torch.cuda.get_device_name(i)}")
     else:
         print("No CUDA GPU detected.")
-
-
-def check_models_downloaded():
-    models_exist = dict()
-    models_exist['NLLB200'] = os.path.isfile(r'models/downloaded/nllb-ctranslate-int8/model.bin')
-    models_exist['small100'] = os.path.isfile(r'models/downloaded/small100-quantized/model.safetensors')
-    return models_exist

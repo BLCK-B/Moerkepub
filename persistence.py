@@ -1,5 +1,7 @@
 import json
 import os
+import platform
+from pathlib import Path
 
 settings_file = 'settings.json'
 
@@ -26,3 +28,22 @@ def __save__(settings):
 def set(settings, key, value):
     settings[key] = value
     __save__(settings)
+
+
+def get_appdata_path():
+    system = platform.system()
+    if system == "Windows":
+        return Path(os.path.join(os.environ.get('APPDATA'), 'EbookTranslate'))
+    elif system == "Linux":
+        return Path.home() / '.config' / 'EbookTranslate'
+    elif system == "Darwin":
+        return Path.home() / 'Library' / 'Application Support' / 'EbookTranslate'
+    else:
+        raise ValueError("Unsupported operating system")
+
+
+def ensure_program_files():
+    appdata_path = get_appdata_path()
+    appdata_path.mkdir(parents=False, exist_ok=True)
+    downloaded = get_appdata_path() / 'models'
+    downloaded.mkdir(parents=False, exist_ok=True)

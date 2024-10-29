@@ -12,6 +12,7 @@ json_codes_path = r"language_codes.json"
 
 
 def main():
+    persistence.ensure_program_files()
     os.system('cls||clear')
     while True:
         json_settings = persistence.load()
@@ -87,8 +88,6 @@ def process_epub(translator, input_file, bilingual):
         elif confirm.lower() == 'n':
             input("Translation canceled.")
             return
-
-        # os.system('cls||clear')
 
 
 main()
