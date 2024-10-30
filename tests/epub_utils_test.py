@@ -3,7 +3,7 @@ import os
 import shutil
 import epub_utils as utils
 
-epub_path = r"resources/wonderland.epub"
+epub_path = r"resources/monkey.epub"
 temp_path = r"resources/extracted"
 
 

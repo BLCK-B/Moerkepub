@@ -1,0 +1,37 @@
+[
+  {
+    "alpha3-b": "afa",
+    "alpha3-t": null,
+    "alpha2": null,
+    "English": "Afro-Asiatic languages",
+    "model-key": "afa_Latn"
+  },
+  {
+    "alpha3-b": "afh",
+    "alpha3-t": null,
+    "alpha2": null,
+    "English": "Afrihili",
+    "model-key": "afh_Latn"
+  },
+  {
+    "alpha3-b": "afr",
+    "alpha3-t": null,
+    "alpha2": "af",
+    "English": "Afrikaans",
+    "model-key": "afr_Latn"
+  },
+  {
+    "alpha3-b": "ger",
+    "alpha3-t": "deu",
+    "alpha2": "de",
+    "English": "German",
+    "model-key": "ger_Latn"
+  },
+  {
+    "alpha3-b": "ice",
+    "alpha3-t": "isl",
+    "alpha2": "is",
+    "English": "Icelandic",
+    "model-key": "ice_Latn"
+  }
+]

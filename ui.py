@@ -82,11 +82,11 @@ def process_epub(translator, input_file, bilingual):
         confirm = input("\nConfirm translate y/n: ").strip().lower()
         if confirm.lower() == 'y':
             text_processor.process_book_files(translator, html_objects, temp_path, output_path, bilingual)
-            input(f'\nBook translated!')
+            input(Fore.GREEN + f'\nBook translated.' + Style.RESET_ALL)
             os.system('cls||clear')
             return
         elif confirm.lower() == 'n':
-            input("Translation canceled.")
+            input(Fore.RED + "Translation canceled." + Style.RESET_ALL)
             return
 
 
