@@ -37,7 +37,7 @@ def show():
             if models_exist['small100']:
                 print("2. small100")
             else:
-                print(Fore.YELLOW + "2. small100 - available for download - 600 MB" + Style.RESET_ALL)
+                print(Fore.YELLOW + "2. small100 - available for download - 0.6 GB" + Style.RESET_ALL)
             choice = input('\n')
             if choice == '1':
                 if models_exist['NLLB200']:

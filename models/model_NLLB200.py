@@ -3,10 +3,11 @@ import transformers
 import persistence
 
 beam_size = 8
+model_path = str(persistence.get_appdata_path() / 'models' / 'nllb-ctranslate-int8')
 
 
 def get_language_codes():
-    ref_tokenizer = transformers.AutoTokenizer.from_pretrained("facebook/nllb-200-distilled-1.3B",
+    ref_tokenizer = transformers.AutoTokenizer.from_pretrained(model_path,
                                                                clean_up_tokenization_spaces=True)
     model_codes = dict()
     for token in ref_tokenizer.additional_special_tokens:
@@ -20,10 +21,10 @@ class Model:
         print("selected: ", source_lang, target_lang)
         self.target_lang = target_lang
         if hw == "cuda" or hw == "cpu":
-            self.model = ctranslate2.Translator(str(persistence.get_appdata_path() / 'models' / 'nllb-ctranslate-int8'), hw)
+            self.model = ctranslate2.Translator(model_path, hw)
         else:
             raise ValueError("Device must be 'cuda' or 'cpu'")
-        self.tokenizer = transformers.AutoTokenizer.from_pretrained("facebook/nllb-200-distilled-1.3B",
+        self.tokenizer = transformers.AutoTokenizer.from_pretrained(model_path,
                                                                     src_lang=source_lang,
                                                                     clean_up_tokenization_spaces=True)
 
