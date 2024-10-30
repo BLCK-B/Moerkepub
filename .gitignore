@@ -2,5 +2,4 @@
 /tests/resources/extracted/
 __pycache__
 /tests/resources
-/models/
 settings.json
