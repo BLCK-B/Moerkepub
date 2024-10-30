@@ -1,6 +1,5 @@
 import ctranslate2
 import transformers
-
 import persistence
 
 beam_size = 8
@@ -20,10 +19,7 @@ class Model:
     def __init__(self, hw, source_lang, target_lang):
         print("selected: ", source_lang, target_lang)
         self.target_lang = target_lang
-        if hw == "cuda":
-            self.model = ctranslate2.Translator(str(persistence.get_appdata_path() / 'models' / 'nllb-ctranslate-int8'), hw)
-            self.device_index = 1
-        elif hw == "cpu":
+        if hw == "cuda" or hw == "cpu":
             self.model = ctranslate2.Translator(str(persistence.get_appdata_path() / 'models' / 'nllb-ctranslate-int8'), hw)
         else:
             raise ValueError("Device must be 'cuda' or 'cpu'")
