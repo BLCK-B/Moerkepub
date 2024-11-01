@@ -6,9 +6,9 @@ import persistence
 from translations import translations
 from colorama import Fore, Style
 
-output_path = r"sideTesting/output/exportBook.epub"
-temp_path = r"sideTesting/extracted.epub"
-json_codes_path = r"language_codes.json"
+output_path = ''
+temp_path = r'extracted.epub'
+json_codes_path = 'language_codes.json'
 
 
 def main():
@@ -41,13 +41,16 @@ def main():
             if json_settings['selected_model'] == "none":
                 input('select a model first')
                 continue
-            input_file = input("Drag and drop EPUB | TXT file.\n\n")
+            input_file = input("Drag and drop EPUB file.\n\n")
             input_file = input_file.replace('\"', '')
             _, extension = os.path.splitext(input_file)
             extension = extension.lower()
-            if extension != '.epub' and extension != '.txt':
+            if extension != '.epub':
                 print(f"Wrong input", extension)
                 continue
+
+            global output_path
+            output_path = f"{os.path.splitext(input_file)[0]}_translated.epub"
 
             json_settings = persistence.load()
             translator = translations(json_settings.get('selected_model'))

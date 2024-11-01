@@ -16,12 +16,13 @@ def show():
             print('2. Select hardware [cuda]')
         else:
             print(f'2. Select hardware [{Fore.RED} CPU - very slow! {Style.RESET_ALL}]')
-        print()
         gpu_available = detect_gpu()
 
         if not gpu_available and json_settings['selected_hw'] == 'cuda':
             persistence.set(json_settings, 'selected_hw', 'cpu')
             json_settings = persistence.load()
+
+        print(f'\nProgram files are in {persistence.get_appdata_path()}')
 
         choice = input('\n')
         os.system('cls||clear')
@@ -74,8 +75,9 @@ def show():
 def detect_gpu():
     # todo: check without driver
     # todo: specify number
+    if persistence.load()['dev'] == 'true':
+        return True
     return torch.cuda.is_available()
-
 
 def print_gpu():
     if torch.cuda.is_available():

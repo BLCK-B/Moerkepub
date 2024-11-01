@@ -2,3 +2,4 @@
 /tests/resources/extracted/
 __pycache__
 settings.json
+extracted.epub
