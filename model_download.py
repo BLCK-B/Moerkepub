@@ -1,7 +1,6 @@
 from huggingface_hub import snapshot_download
 import os
 from colorama import Fore, Style
-
 import persistence
 
 
@@ -21,7 +20,7 @@ def download(model_name):
         return
 
     snapshot_download(repo_id=repo, local_dir=folder, cache_dir=None)
-    input(Fore.GREEN + 'model downloaded: {model_name}\n' + Style.RESET_ALL)
+    input(Fore.GREEN + f'model downloaded: {model_name}\n' + Style.RESET_ALL)
 
 
 def check_models_downloaded():

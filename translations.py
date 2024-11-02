@@ -1,6 +1,5 @@
 from progress.bar import IncrementalBar
 import os
-
 from models import model_NLLB200, model_small100
 
 
@@ -10,13 +9,13 @@ class translations:
         self.model = None
         self.model_name = model_name
 
-    def instantiate_model(self, hw, source_lang, target_lang):
+    def instantiate_model(self, source_lang, target_lang):
         if self.model_name == "NLLB200":
             from models.model_NLLB200 import Model
-            self.model = Model(hw, source_lang, target_lang)
+            self.model = Model(source_lang, target_lang)
         elif self.model_name == "small100":
             from models.model_small100 import Model
-            self.model = Model(hw, source_lang, target_lang)
+            self.model = Model(source_lang, target_lang)
         else:
             raise Exception("Model not found")
 

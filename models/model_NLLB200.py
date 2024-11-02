@@ -17,13 +17,10 @@ def get_language_codes():
 
 class Model:
 
-    def __init__(self, hw, source_lang, target_lang):
+    def __init__(self, source_lang, target_lang):
         print("selected: ", source_lang, target_lang)
         self.target_lang = target_lang
-        if hw == "cuda" or hw == "cpu":
-            self.model = ctranslate2.Translator(model_path, hw)
-        else:
-            raise ValueError("Device must be 'cuda' or 'cpu'")
+        self.model = ctranslate2.Translator(model_path)
         self.tokenizer = transformers.AutoTokenizer.from_pretrained(model_path,
                                                                     src_lang=source_lang,
                                                                     clean_up_tokenization_spaces=True)

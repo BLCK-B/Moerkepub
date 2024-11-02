@@ -1,9 +1,9 @@
 import os
 
+from colorama import Fore, Style
+
 import model_download
 import persistence
-import torch
-from colorama import Fore, Style
 
 
 def show():
@@ -12,15 +12,6 @@ def show():
         json_settings = persistence.load()
         model_name = json_settings['selected_model']
         print(f'1. Select translation model [ {model_name} ]')
-        if json_settings.get('selected_hw') == 'cuda':
-            print('2. Select hardware [cuda]')
-        else:
-            print(f'2. Select hardware [{Fore.YELLOW} CPU - very slow! {Style.RESET_ALL}]')
-        gpu_available = detect_gpu()
-
-        if not gpu_available and json_settings['selected_hw'] == 'cuda':
-            persistence.set(json_settings, 'selected_hw', 'cpu')
-            json_settings = persistence.load()
 
         print(f'\nProgram files are in {persistence.get_appdata_path()}')
 
@@ -52,47 +43,5 @@ def show():
                 else:
                     if input("download small100? [y]\n") == 'y':
                         model_download.download('small100')
-
-        elif choice == '2':
-            if json_settings.get('selected_hw') == 'cuda':
-                print('Select hardware [ cuda ]')
-            else:
-                print(f'Select hardware [{Fore.YELLOW} CPU - very slow! {Style.RESET_ALL}]')
-            print()
-            if gpu_available:
-                if json_settings.get('selected_model') == 'NLLB200':
-                    try:
-                        import ctranslate2
-                        print("1. cuda GPU")
-                    except ImportError:
-                        print(Fore.RED + '-. NLLB200 + CUDA requires ctranslate2 (pip install ctranslate2)' + Style.RESET_ALL)
-                else:
-                    print("1. cuda GPU")
-            else:
-                print(Fore.YELLOW + "-. no cuda GPU detected" + Style.RESET_ALL)
-            print("2. CPU")
-            print()
-            print_gpu()
-            choice = input('\n')
-            if choice == '1' and gpu_available:
-                persistence.set(json_settings, 'selected_hw', 'cuda')
-            elif choice == '2':
-                persistence.set(json_settings, 'selected_hw', 'cpu')
         else:
             return
-
-
-def detect_gpu():
-    # todo: specify number
-    if persistence.load()['dev'] == 'true':
-        return True
-    return torch.cuda.is_available()
-
-
-def print_gpu():
-    if torch.cuda.is_available():
-        print("CUDA is available:")
-        for i in range(torch.cuda.device_count()):
-            print(f"GPU {i}: {torch.cuda.get_device_name(i)}")
-    else:
-        print("No CUDA-supported GPU detected.")

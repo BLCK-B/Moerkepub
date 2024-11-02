@@ -1,3 +1,4 @@
+import torch
 import language_codes
 import settings_screen
 import text_processor
@@ -15,6 +16,10 @@ def main():
     persistence.ensure_program_files()
     text_processor.download_nltk_resources()
 
+    if not detect_gpu():
+        print('No CUDA GPU detected.')
+        return
+
     os.system('cls||clear')
     while True:
         json_settings = persistence.load()
@@ -25,10 +30,7 @@ def main():
         print("4. Exit")
         print()
         print('selected model:', json_settings['selected_model'])
-        if json_settings.get('selected_hw') == "cuda":
-            print('selected hardware: cuda')
-        else:
-            print(Fore.YELLOW + "selected hardware: CPU - very slow!\n" + Style.RESET_ALL)
+        print_gpu()
 
         choice = input('\n')
         os.system('cls||clear')
@@ -66,7 +68,7 @@ def main():
             os.system('cls||clear')
 
             print("Loading model...")
-            translator.instantiate_model(json_settings.get('selected_hw'), source_lang, target_lang)
+            translator.instantiate_model(source_lang, target_lang)
             os.system('cls||clear')
 
             match extension:
@@ -93,6 +95,16 @@ def process_epub(translator, input_file, bilingual):
         elif confirm.lower() == 'n':
             input(Fore.RED + "Translation canceled." + Style.RESET_ALL)
             return
+
+
+def detect_gpu():
+    return torch.cuda.is_available()
+
+
+def print_gpu():
+    print("CUDA devices:")
+    for i in range(torch.cuda.device_count()):
+        print(f"GPU {i}: {torch.cuda.get_device_name(i)}")
 
 
 main()

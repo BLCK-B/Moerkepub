@@ -8,7 +8,6 @@ def load():
     path = get_appdata_path() / 'settings.json'
     default_settings = {
         'selected_model': 'none',
-        'selected_hw': 'cpu',
         'dev': 'false'
     }
     if os.path.exists(path):
