@@ -9,6 +9,7 @@ import epub_utils
 
 
 def split_sentences(text):
+    nltk.download()
     return nltk.sent_tokenize(text)
 
 

@@ -1,0 +1,15 @@
+name: translateconda
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - beautifulsoup4
+  - colorama
+  - huggingface_hub
+  - keyboard
+  - nltk
+  - progress
+  - pytest
+  - sentencepiece
+  - pytorch
+  - transformers

@@ -28,17 +28,17 @@ def show():
         os.system('cls||clear')
 
         if choice == '1':
-            print(f'Select translation model [ {model_name} ]')
+            print(f'Select translation model [{model_name}]')
             print()
             models_exist = model_download.check_models_downloaded()
             if models_exist['NLLB200']:
                 print("1. NLLB200")
             else:
-                print(Fore.YELLOW + "1. NLLB200 - available for download - 1.3 GB" + Style.RESET_ALL)
+                print(Fore.YELLOW + "1. NLLB200 - available for download [1.3 GB]" + Style.RESET_ALL)
             if models_exist['small100']:
                 print("2. small100")
             else:
-                print(Fore.YELLOW + "2. small100 - available for download - 0.6 GB" + Style.RESET_ALL)
+                print(Fore.YELLOW + "2. small100 - available for download [0.6 GB]" + Style.RESET_ALL)
             choice = input('\n')
             if choice == '1':
                 if models_exist['NLLB200']:
@@ -59,7 +59,17 @@ def show():
             else:
                 print(f'Select hardware [{Fore.RED} CPU - very slow! {Style.RESET_ALL}]')
             print()
-            print("1. cuda GPU") if gpu_available else print(Fore.YELLOW + "-. no cuda GPU detected" + Style.RESET_ALL)
+            if gpu_available:
+                if json_settings.get('selected_model') == 'NLLB200':
+                    try:
+                        import ctranslate2
+                        print("1. cuda GPU")
+                    except ImportError:
+                        print(Fore.RED + '-. NLLB200 + CUDA requires ctranslate2 (pip install ctranslate2)' + Style.RESET_ALL)
+                else:
+                    print("1. cuda GPU")
+            else:
+                print(Fore.YELLOW + "-. no cuda GPU detected" + Style.RESET_ALL)
             print("2. CPU")
             print()
             print_gpu()
@@ -73,11 +83,11 @@ def show():
 
 
 def detect_gpu():
-    # todo: check without driver
     # todo: specify number
     if persistence.load()['dev'] == 'true':
         return True
     return torch.cuda.is_available()
+
 
 def print_gpu():
     if torch.cuda.is_available():
@@ -85,4 +95,4 @@ def print_gpu():
         for i in range(torch.cuda.device_count()):
             print(f"GPU {i}: {torch.cuda.get_device_name(i)}")
     else:
-        print("No CUDA GPU detected.")
+        print("No CUDA-supported GPU detected.")
