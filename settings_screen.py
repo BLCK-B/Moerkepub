@@ -15,7 +15,7 @@ def show():
         if json_settings.get('selected_hw') == 'cuda':
             print('2. Select hardware [cuda]')
         else:
-            print(f'2. Select hardware [{Fore.RED} CPU - very slow! {Style.RESET_ALL}]')
+            print(f'2. Select hardware [{Fore.YELLOW} CPU - very slow! {Style.RESET_ALL}]')
         gpu_available = detect_gpu()
 
         if not gpu_available and json_settings['selected_hw'] == 'cuda':
@@ -28,7 +28,7 @@ def show():
         os.system('cls||clear')
 
         if choice == '1':
-            print(f'Select translation model [{model_name}]')
+            print(f'Select translation model [ {model_name} ]')
             print()
             models_exist = model_download.check_models_downloaded()
             if models_exist['NLLB200']:
@@ -55,9 +55,9 @@ def show():
 
         elif choice == '2':
             if json_settings.get('selected_hw') == 'cuda':
-                print('Select hardware [cuda]')
+                print('Select hardware [ cuda ]')
             else:
-                print(f'Select hardware [{Fore.RED} CPU - very slow! {Style.RESET_ALL}]')
+                print(f'Select hardware [{Fore.YELLOW} CPU - very slow! {Style.RESET_ALL}]')
             print()
             if gpu_available:
                 if json_settings.get('selected_model') == 'NLLB200':

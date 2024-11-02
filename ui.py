@@ -13,6 +13,8 @@ json_codes_path = 'language_codes.json'
 
 def main():
     persistence.ensure_program_files()
+    text_processor.download_nltk_resources()
+
     os.system('cls||clear')
     while True:
         json_settings = persistence.load()
@@ -26,7 +28,7 @@ def main():
         if json_settings.get('selected_hw') == "cuda":
             print('selected hardware: cuda')
         else:
-            print(Fore.RED + "selected hardware: CPU - very slow!\n" + Style.RESET_ALL)
+            print(Fore.YELLOW + "selected hardware: CPU - very slow!\n" + Style.RESET_ALL)
 
         choice = input('\n')
         os.system('cls||clear')

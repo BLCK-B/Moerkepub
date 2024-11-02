@@ -4,12 +4,19 @@ import shutil
 from progress.bar import IncrementalBar
 import time
 import nltk
+from nltk.data import find
 from bs4 import BeautifulSoup
 import epub_utils
 
 
+def download_nltk_resources():
+    try:
+        find('tokenizers/punkt_tab')
+    except LookupError:
+        nltk.download('punkt_tab')
+
+
 def split_sentences(text):
-    nltk.download()
     return nltk.sent_tokenize(text)
 
 
