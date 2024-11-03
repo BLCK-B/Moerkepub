@@ -18,7 +18,7 @@ class Model:
 
     def __init__(self, source_lang, target_lang):
         print("selected: ", source_lang, target_lang)
-        self.model = M2M100ForConditionalGeneration.from_pretrained(model_path)
+        self.model = M2M100ForConditionalGeneration.from_pretrained(model_path, low_cpu_mem_usage=True, torch_dtype=torch.float16)
         self.device = torch.device("cuda:0")
         self.tokenizer = M2M100Tokenizer.from_pretrained(model_path)
         self.tokenizer.tgt_lang = target_lang.replace('_', '')
