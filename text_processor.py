@@ -38,7 +38,6 @@ def process_contents(translator, html_object, bilingual):
     p_tags = soup.find_all('p')
 
     translated = translator.translate(html_object.get('sentence_list'), batch_size=4, name=html_path)
-    # translated = group
     new_tags = apply_translated(translated, p_tags, html_object.get('tag_sentence_count'))
 
     for original_tag, new_tag in zip(p_tags, new_tags):
