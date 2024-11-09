@@ -106,6 +106,8 @@ def main():
 
 
 def process_epub(translator, input_file, bilingual):
+    input('source language: ')
+    input('target language: ')
     html_objects = text_processor.book_init(input_file, temp_path, output_path)
     while True:
         confirm = input("\nConfirm translate y/n: ").strip().lower()
