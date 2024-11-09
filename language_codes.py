@@ -3,6 +3,7 @@ import logging
 import os
 from pynput import keyboard
 
+
 # https://iso639-3.sil.org/code_tables/639/data
 
 def __find_by_code__(search_code, json_all_codes):
@@ -62,6 +63,7 @@ def __find_suggestions__(user_input, json_mapped, modelKeyOnly=False):
 
     return list(suggestions)
 
+
 def search(json_mapped, message):
     user_input = ''
     prev_suggestions = []
@@ -95,4 +97,3 @@ def search(json_mapped, message):
                     else:
                         print("\nNo language found.")
                 print(f"\n\r{user_input}", end='')
-

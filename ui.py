@@ -25,11 +25,12 @@ def main():
     os.system('cls||clear')
     while True:
         json_settings = persistence.load()
-        print('--- Ebook translator ---')
-        print("1. Settings")
-        print("2. Translate")
-        print("3. Translate - bilingual")
-        print("4. Exit")
+        print('--- Mørkepub ---')
+        print("1. Translate")
+        print("2. Translate - bilingual")
+        print("3. Settings")
+        print("4. About")
+        print("5. Exit")
         print()
         print('selected model:', json_settings['selected_model'])
         print_gpu()
@@ -40,10 +41,7 @@ def main():
         if choice == 'd':
             print('nothing')
 
-        elif choice == '1':
-            settings_screen.show()
-
-        elif choice == '2' or choice == '3':
+        elif choice == '1' or choice == '2':
             if json_settings['selected_model'] == "none":
                 input('select a model first')
                 continue
@@ -72,15 +70,38 @@ def main():
             print("Loading model...")
             translator.instantiate_model(source_lang, target_lang)
             os.system('cls||clear')
+            process_epub(translator, input_file, bilingual=(choice == '2'))
 
-            match extension:
-                case '.epub':
-                    process_epub(translator, input_file, bilingual=(choice == '3'))
-                case '.txt':
-                    print(f"Processing TXT file")
+        elif choice == '3':
+            settings_screen.show()
 
         elif choice == '4':
-            print("Ebook translator exited.")
+            print('''
+  .        *   .    .        .      *     .       .  *
+        .         .        .     .           .     .  
+.    .     .   .      .         .        .       .     
+        *        .         .    *  .  .     .      .  
+  .            .   Mørkepub         .           .        
+    .      .                   .       .    .     .    
+*       .        .   .     by             .           . 
+   .     .        .                 .        *          
+             .        .      BLCK    .          .   
+  .    .    *  .     .     .       .          .     . 
+.      .   .  .                   .     .         *  .
+  .               .     .    .              .   .     
+ .        .   .           .       *     .          .  
+            ''')
+            print('Version: 1')
+            print('\nRepository: https://github.com/BLCK-B/Moerkepub')
+            print('For more information, feedback, updates — see repository.')
+            print(f'\nProgram files location: {persistence.get_appdata_path()}')
+            print('\nCopyright 2024 BLCK')
+            print('Licensed under the Apache License, Version 2.0')
+            input('\n')
+            os.system('cls||clear')
+
+        elif choice == '5':
+            print("Mørkepub exited.")
             break
 
 

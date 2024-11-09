@@ -13,8 +13,6 @@ def show():
         model_name = json_settings['selected_model']
         print(f'1. Select translation model [ {model_name} ]')
 
-        print(f'\nProgram files are in {persistence.get_appdata_path()}')
-
         choice = input('\n')
         os.system('cls||clear')
 
