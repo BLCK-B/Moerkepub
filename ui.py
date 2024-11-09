@@ -1,11 +1,13 @@
+import os
+
 import torch
+from colorama import Fore, Style
+
 import language_codes
+import persistence
 import settings_screen
 import text_processor
-import os
-import persistence
 from translations import translations
-from colorama import Fore, Style
 
 output_path = ''
 temp_path = r'extracted.epub'
@@ -63,7 +65,7 @@ def main():
 
             source_lang = language_codes.search(mapped_langs, 'Select source language (start typing):')
             os.system('cls||clear')
-            target_lang = language_codes.search(mapped_langs, f'Source: {source_lang}. Select target language (start '
+            target_lang = language_codes.search(mapped_langs, f'Source: {source_lang}\nSelect target language (start '
                                                               f'typing):')
             os.system('cls||clear')
 
@@ -84,7 +86,6 @@ def main():
 
 def process_epub(translator, input_file, bilingual):
     html_objects = text_processor.book_init(input_file, temp_path, output_path)
-
     while True:
         confirm = input("\nConfirm translate y/n: ").strip().lower()
         if confirm.lower() == 'y':

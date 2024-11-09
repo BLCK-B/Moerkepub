@@ -1,9 +1,7 @@
 import json
 import logging
 import os
-
-import keyboard
-
+from pynput import keyboard
 
 # https://iso639-3.sil.org/code_tables/639/data
 
@@ -64,37 +62,37 @@ def __find_suggestions__(user_input, json_mapped, modelKeyOnly=False):
 
     return list(suggestions)
 
-
 def search(json_mapped, message):
     user_input = ''
     prev_suggestions = []
     print(message + '\n')
+    with keyboard.Events() as events:
+        while True:
+            event = events.get(1.0)
+            if event is not None:
+                if isinstance(event, keyboard.Events.Press):
+                    if event.key == keyboard.Key.backspace:
+                        user_input = user_input[:-1]
+                    elif event.key == keyboard.Key.enter:
+                        if len(prev_suggestions) == 1:
+                            return __find_suggestions__(user_input, json_mapped, True)
+                        else:
+                            print("\nSpecify a single language.")
+                            continue
+                    elif event.key == keyboard.Key.space:
+                        user_input += ' '
+                    elif isinstance(event.key, keyboard.KeyCode) and event.key.char is not None:
+                        user_input += event.key.char
 
-    while True:
-        print(f"\r{user_input}", end='')
-        event = keyboard.read_event()
-        if event.event_type == keyboard.KEY_DOWN:
-            if event.name == 'backspace':
-                user_input = user_input[:-1]
-            elif event.name == 'enter':
-                if len(prev_suggestions) == 1:
-                    return __find_suggestions__(user_input, json_mapped, True)
-                else:
-                    print("\nSpecify a single language.")
-                    continue
-            elif event.name == 'space':
-                user_input += ' '
-            elif len(event.name) == 1:
-                user_input += event.name
-
-            if len(user_input) >= 2:
                 os.system('cls||clear')
                 print(message + '\n')
-                suggestions = __find_suggestions__(user_input, json_mapped)
-                prev_suggestions = suggestions
-                if suggestions:
-                    for suggestion in sorted(suggestions):
-                        print(' - '.join(suggestion))
-                    print('\n')
-                else:
-                    print("\nNo language found.")
+                if len(user_input) >= 2:
+                    suggestions = __find_suggestions__(user_input, json_mapped)
+                    prev_suggestions = suggestions
+                    if suggestions:
+                        for suggestion in sorted(suggestions):
+                            print(' - '.join(suggestion))
+                    else:
+                        print("\nNo language found.")
+                print(f"\n\r{user_input}", end='')
+

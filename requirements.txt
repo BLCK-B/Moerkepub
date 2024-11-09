@@ -2,9 +2,9 @@ beautifulsoup4
 colorama
 ctranslate2
 huggingface_hub
-keyboard
 nltk
 progress
+pynput
 pytest
 sentencepiece
 torch
