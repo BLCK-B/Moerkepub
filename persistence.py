@@ -32,11 +32,9 @@ def set(settings, key, value):
 def get_appdata_path():
     system = platform.system()
     if system == "Windows":
-        return Path(os.path.join(os.environ.get('APPDATA'), 'EbookTranslate'))
+        return Path(os.path.join(os.environ.get('APPDATA'), 'Moerkepub'))
     elif system == "Linux":
-        return Path.home() / '.config' / 'EbookTranslate'
-    elif system == "Darwin":
-        return Path.home() / 'Library' / 'Application Support' / 'EbookTranslate'
+        return Path.home() / '.config' / 'Moerkepub'
     else:
         raise ValueError("Unsupported operating system")
 
