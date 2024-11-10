@@ -3,9 +3,9 @@
 This is a command-line tool to translate EPUBs using multilingual transformer models.
 Processing runs locally and requires a CUDA-compatible GPU.
 
-<img src="https://github.com/user-attachments/assets/61a10479-6d5c-4b4f-9632-a15c7f0bb1f1" width="460px"/>
+<img src="https://github.com/user-attachments/assets/dadf0c1e-72cd-48ac-bdc0-cf44ff625080" width="380px"/>
 
-<img src="https://github.com/user-attachments/assets/734dcbe9-b938-4cda-a1a3-cc9a9425d7ba" width="370px"/>
+<img src="https://github.com/user-attachments/assets/70fb0e42-238e-457f-9cae-491101213a4e" width="330px"/>
 
 | Features  |
 | ------------- |
