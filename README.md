@@ -56,7 +56,9 @@ AI evolves quickly. You are welcome to suggest a new state-of-the-art multilingu
 - delete both the program data and source code folders
 - optionally: uninstall pip dependencies in requirements.txt
 
-## Feedback
+##
+
+**Feedback**
 
 I appreciate any bug reports: EPUB formatting, translation, installation etc.
 Please use the [issue tracker](https://github.com/BLCK-B/Moerkepub/issues) or [discussions](https://github.com/BLCK-B/Moerkepub/discussions).
