@@ -40,7 +40,7 @@ AI evolves quickly. You are welcome to suggest a new state-of-the-art multilingu
 - [python](https://www.python.org/downloads/)
 
 **Setup (first time)**
-- download a release, move it to your preferred location
+- download the source code from a [release](https://github.com/BLCK-B/Moerkepub/releases), move it to your preferred location
 - open terminal in the unzipped folder
 - `pip install -r requirements.txt` - downloads dependencies
 - `python ui.py` or `python3 ui.py` - starts the program
