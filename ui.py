@@ -124,8 +124,7 @@ def process_epub(translator, input_file, bilingual):
 
 
 def detect_gpu():
-    return False
-    # return torch.cuda.is_available()
+    return torch.cuda.is_available()
 
 
 def print_gpu():
