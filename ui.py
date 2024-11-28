@@ -18,11 +18,11 @@ def main():
     persistence.ensure_program_files()
     text_processor.download_nltk_resources()
 
-    if not detect_gpu():
-        print('No CUDA GPU detected.')
-        return
-
     os.system('cls||clear')
+
+    if not detect_gpu():
+        print(Fore.YELLOW + 'Warning - no CUDA GPU detected.' + Style.RESET_ALL)
+
     while True:
         json_settings = persistence.load()
         print('--- Mørkepub ---')
@@ -124,7 +124,8 @@ def process_epub(translator, input_file, bilingual):
 
 
 def detect_gpu():
-    return torch.cuda.is_available()
+    return False
+    # return torch.cuda.is_available()
 
 
 def print_gpu():

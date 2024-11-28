@@ -62,3 +62,8 @@ def recreate_epub(temp_path, output_path):
             for file in files:
                 file_path = os.path.join(root, file)
                 z.write(file_path, os.path.relpath(file_path, temp_path))
+
+
+
+
+
