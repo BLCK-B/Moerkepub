@@ -73,7 +73,11 @@ You may then remove ctranslate2 from `requirements.txt`.
 
 ***No package metadata was found for bitsandbytes***
 
-Reinstall to a compatible version: `pip install --force-reinstall 'https://github.com/bitsandbytes-foundation/bitsandbytes/releases/download/continuous-release_multi-backend-refactor/bitsandbytes-0.44.1.dev0-py3-none-win_amd64.whl'`.
+Reinstall to a compatible version:
+
+```
+pip install --force-reinstall 'https://github.com/bitsandbytes-foundation/bitsandbytes/releases/download/continuous-release_multi-backend-refactor/bitsandbytes-0.44.1.dev0-py3-none-win_amd64.whl'
+```
 
 ***Any other issues***
 
