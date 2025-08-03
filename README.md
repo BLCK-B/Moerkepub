@@ -7,6 +7,9 @@ Processing runs locally and requires a GPU.
 
 <img src="https://github.com/user-attachments/assets/70fb0e42-238e-457f-9cae-491101213a4e" width="330px"/>
 
+> [!NOTE]  
+> This project is archived. I will no longer have a dedicated GPU. You can create a fork if you wish.
+
 | Features  |
 | ------------- |
 | 200+ languages  |
@@ -29,8 +32,6 @@ These are the latest supported models. Quantized versions are used to reduce the
 | [NLLB200](https://huggingface.co/facebook/nllb-200-distilled-1.3B)  | 1.3B | 200 | 1.3 GB |  CTranslate2 | |
 | [small100](https://huggingface.co/alirezamsh/small100) | 330M | 100 | 0.6 GB | SentencePiece, bitsandbytes | Only Intel CPUs |
 
-AI evolves quickly. You are welcome to suggest a new state-of-the-art multilingual model that could be added.
-
 ## Prerequisites
 - CUDA graphics card (Nvidia) or ROCm graphics card (AMD)
 - [python](https://www.python.org/downloads/)
@@ -47,17 +48,11 @@ Though it has not been tested, you may need to install the ROCm drivers.
 
 ## Setup
 
-**Setup (first time)**
+**Setup**
 - download the source code from a [release](https://github.com/BLCK-B/Moerkepub/releases), move it to your preferred location
 - open terminal in the unzipped folder
 - `pip install -r requirements.txt` - downloads dependencies
 - `python ui.py` or `python3 ui.py` - starts the program
-
-**Update to the new version**
-- delete the (release) folder
-- download a new release, move it to your preferred location
-- open terminal in the unzipped folder
-- optionally: `pip install -r requirements.txt` - updates dependencies
 
 **Uninstall**
 - check where the program data is located (About menu in the program)
@@ -81,7 +76,7 @@ pip install --force-reinstall 'https://github.com/bitsandbytes-foundation/bitsan
 
 ***Any other issues***
 
-If you have compatible system, you should be able to resolve these issues by following the crash log messages and installing the compatible versions of dependencies. Otherwise, let me know.
+If you have compatible system, you should be able to resolve these issues by following the crash log messages and installing the compatible versions of dependencies.
 
 ##
 
